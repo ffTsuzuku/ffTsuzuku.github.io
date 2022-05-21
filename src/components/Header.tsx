@@ -54,6 +54,7 @@ function Header() {
                 <HStack>
                     <Menu>
                         <MenuButton
+                            color={'white'}
                             as={Button}
                             rightIcon={
                                 <Show breakpoint='(max-width: 719px)'>

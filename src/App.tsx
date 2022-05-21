@@ -12,7 +12,6 @@ import Education from './components/Education'
 function App() {
     return (
         <div className='App'>
-            <Header />
             <Cover />
             <WorkExperience />
             <Divider />

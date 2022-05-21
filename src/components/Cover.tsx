@@ -11,6 +11,7 @@ import {
 
 import darkWallpaper from '../imgs/s1.jpg'
 import lightWallpaper from '../imgs/peotry.jpg'
+import Header from './Header'
 
 function Cover() {
     const { colorMode } = useColorMode()
@@ -26,14 +27,19 @@ function Cover() {
     )
 
     return (
-        <Box backgroundImage={src} backgroundPosition='left' h='100vh' w='100%'>
+        <Box
+            backgroundImage={src}
+            backgroundPosition='left'
+            backgroundRepeat={'no-repeat'}
+            backgroundSize={'cover'}
+            w='100%'
+        >
+            <Header />
             <VStack
-                alignItems={{ base: 'center', lg: 'start' }}
-                h='100%'
+                minHeight='100vh'
+                w={'100%'}
                 justifyContent={'center'}
-                paddingX={10}
                 spacing={5}
-                w={{ base: '100%', md: '100%', lg: '50%' }}
             >
                 <Text fontSize={{ base: '35px', md: '60px', lg: '76px' }}>
                     FullStack Developer
@@ -43,7 +49,7 @@ function Cover() {
                 </Text>
                 <Text
                     color={'white'}
-                    width={{ lg: '60%' }}
+                    width={'80%'}
                     p={3}
                     backgroundColor={blurbBgColor}
                     borderRadius={'10px'}
