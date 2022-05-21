@@ -36,11 +36,14 @@ function Header() {
     const switchToggled = useColorModeValue(true, false)
 
     const ThemeIcon =
-        colorMode === 'dark' ? <MoonIcon /> : <BsFillSunFill size={25} />
+        colorMode === 'dark' ? (
+            <MoonIcon boxSize={'25px'} />
+        ) : (
+            <BsFillSunFill size={25} />
+        )
     return (
         <>
             <Flex
-                position={'absolute'}
                 zIndex={1}
                 justifyContent={'space-between'}
                 width='100%'
@@ -53,7 +56,7 @@ function Header() {
                         <MenuButton
                             as={Button}
                             rightIcon={
-                                <Show breakpoint='(max-width: 650px)'>
+                                <Show breakpoint='(max-width: 719px)'>
                                     <ChevronDownIcon />
                                 </Show>
                             }
@@ -62,7 +65,7 @@ function Header() {
                         >
                             {data.name}
                         </MenuButton>
-                        <Show breakpoint='(max-width: 650px)'>
+                        <Show breakpoint='(max-width: 720px)'>
                             <MenuList>
                                 <Link href='#WorkExperience'>
                                     <MenuItem cursor='pointer'>
@@ -86,7 +89,7 @@ function Header() {
                 </HStack>
 
                 <HStack spacing={5} alignContent='center' color={'white'}>
-                    <Show breakpoint='(min-width: 650px)'>
+                    <Show breakpoint='(min-width: 720px)'>
                         <Link href='#WorkExperience'>
                             <Text cursor='pointer'>Work Experience</Text>
                         </Link>

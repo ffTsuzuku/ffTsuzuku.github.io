@@ -15,6 +15,7 @@ import {
     TabPanels,
     Text,
     Divider,
+    VStack,
 } from '@chakra-ui/react'
 import { MdWork, MdCheckCircle } from 'react-icons/md'
 import { RiCodeSLine } from 'react-icons/ri'
@@ -35,7 +36,7 @@ function WorkExperience() {
             <Tab
                 _selected={{
                     boxShadow: 'none',
-                    borderBottom: '2px solid red',
+                    borderBottom: '5px solid red',
                 }}
             >
                 {companyName}
@@ -58,12 +59,14 @@ function WorkExperience() {
         })
 
         CompanyDetailJSX.push(
-            <TabPanel>
-                {TitleJSX}
-                {PeriodJSX}
-                <List spacing={4} marginTop={4}>
-                    {ResponsibilitiesJSX}
-                </List>
+            <TabPanel marginLeft={'auto'}>
+                <VStack>
+                    <List spacing={4} marginTop={4}>
+                        {TitleJSX}
+                        {PeriodJSX}
+                        {ResponsibilitiesJSX}
+                    </List>
+                </VStack>
             </TabPanel>
         )
     })
@@ -78,8 +81,12 @@ function WorkExperience() {
                         Work Experience
                     </Text>
                 </HStack>
-                <Tabs maxW='100%' variant=''>
-                    <TabList overflowX={'auto'} overflowY='hidden'>
+                <Tabs>
+                    <TabList
+                        overflowX={'auto'}
+                        overflowY='hidden'
+                        justifyContent={'center'}
+                    >
                         {CompanyListJSX}
                     </TabList>
 
