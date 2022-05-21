@@ -47,7 +47,6 @@ function Header() {
                 height={20}
                 alignItems={'center'}
                 padding={8}
-                color={'white'}
             >
                 <HStack>
                     <Menu>
@@ -86,7 +85,7 @@ function Header() {
                     </Menu>
                 </HStack>
 
-                <HStack spacing={5} alignContent='center'>
+                <HStack spacing={5} alignContent='center' color={'white'}>
                     <Show breakpoint='(min-width: 650px)'>
                         <Link href='#WorkExperience'>
                             <Text cursor='pointer'>Work Experience</Text>
