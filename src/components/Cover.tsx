@@ -6,6 +6,7 @@ import {
     Text,
     useColorMode,
     useColorModeValue,
+    Link,
     VStack,
 } from '@chakra-ui/react'
 
@@ -60,9 +61,14 @@ function Cover() {
                     Highly driven and experienced software developer who has a
                     passion for learning and sharing knowledge with others.
                 </Text>
-                <Button colorScheme={'twitter'} size={'lg'}>
-                    Download CV
-                </Button>
+                <Link
+                    href='https://drive.google.com/uc?id=190hE2RrXQBZC5qqkx-IOrQ0WHcAn310R&authuser=0&export=download'
+                    target={'_blank'}
+                >
+                    <Button colorScheme={'twitter'} size={'lg'}>
+                        Download CV
+                    </Button>
+                </Link>
             </VStack>
         </Box>
     )
