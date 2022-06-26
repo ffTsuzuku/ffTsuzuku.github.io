@@ -16,6 +16,7 @@ import {
     useDisclosure,
     Show,
     Icon,
+    Box,
 } from '@chakra-ui/react'
 
 import {
@@ -28,10 +29,12 @@ import {
 import { BsFillSunFill } from 'react-icons/bs'
 
 import data from '../data'
+import { CSSObject } from '@emotion/react'
 
 function Header() {
     const { colorMode, toggleColorMode } = useColorMode()
-    const nameBadgeColor = useColorModeValue('orange.700', 'gray.800')
+    const menuItemUnderLineColor = useColorModeValue('yellow.400', 'yellow.500')
+    const menuItemBgColor = useColorModeValue('purple.600', 'purple.800')
     const { isOpen, onOpen, onClose } = useDisclosure()
     const switchToggled = useColorModeValue(true, false)
 
@@ -41,6 +44,50 @@ function Header() {
         ) : (
             <BsFillSunFill size={25} />
         )
+
+    const MenuItemTextHoverStlyes: CSSObject = {
+        backgroundColor: menuItemBgColor,
+        borderRadius: '3px',
+    }
+
+    const menuItems = [
+        {
+            Label: 'Work Experience',
+            Link: '#WorkExperience',
+        },
+
+        {
+            Label: 'Tech Stack',
+            Link: '#TechStack',
+        },
+
+        {
+            Label: 'Education',
+            Link: '#Education',
+        },
+    ]
+
+    const MenuItemsJSX = menuItems.map((item) => {
+        return (
+            <Link role='group' href={item.Link} _hover={{}}>
+                <Flex
+                    padding={'8px 5px 3px 5px'}
+                    justifyContent={'center'}
+                    alignItems='center'
+                    cursor='pointer'
+                    _groupHover={MenuItemTextHoverStlyes}
+                >
+                    {item.Label}
+                </Flex>
+                <Box
+                    marginTop={'5px'}
+                    border={'2px solid transparent'}
+                    borderRadius='3px'
+                    _groupHover={{ borderColor: menuItemUnderLineColor }}
+                />
+            </Link>
+        )
+    })
     return (
         <>
             <Flex
@@ -91,15 +138,7 @@ function Header() {
 
                 <HStack spacing={5} alignContent='center' color={'white'}>
                     <Show breakpoint='(min-width: 720px)'>
-                        <Link href='#WorkExperience'>
-                            <Text cursor='pointer'>Work Experience</Text>
-                        </Link>
-                        <Link href='#TechStack'>
-                            <Text cursor='pointer'>Tech Stack</Text>
-                        </Link>
-                        <Link href='#Education'>
-                            <Text cursor='pointer'>Education</Text>
-                        </Link>
+                        {MenuItemsJSX}
                         <Text cursor='pointer'>GitHub</Text>
                     </Show>
                     <Switch
