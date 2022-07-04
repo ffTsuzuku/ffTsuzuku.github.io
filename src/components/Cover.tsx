@@ -13,28 +13,40 @@ import {
 import darkWallpaper from '../imgs/s1.jpg'
 import lightWallpaper from '../imgs/peotry.jpg'
 import Header from './Header'
+import { useEffect, useRef } from 'react'
+import useIntersection from '../hooks/useIntersection'
 
-function Cover() {
+interface CoverProps {
+    onVisible: () => void
+}
+function Cover({ onVisible }: CoverProps) {
+    const ref = useRef<HTMLDivElement>()
+    const isShowing = useIntersection(ref, '-300px')
+
     const { colorMode } = useColorMode()
 
-    // const darkWallpaper =
-    //     'https://media.idownloadblog.com/wp-content/uploads/2020/10/iOS-14.2-wallpaper-Desert-Peak-Dark-Mode.jpg'
-    // const lightWallpaper =
-    //     'https://media.idownloadblog.com/wp-content/uploads/2020/10/iOS-14.2-wallpaper-Desert-Peak-Light-Mode.jpg'
     const src = colorMode === 'dark' ? darkWallpaper : lightWallpaper
     const blurbBgColor = useColorModeValue(
         'blackAlpha.700',
         'rgba(85, 60, 154, 0.80)'
     )
 
+    useEffect(() => {
+        if (isShowing) {
+            onVisible()
+        }
+    }, [isShowing])
+
     return (
         <Box
+            ref={ref}
             backgroundImage={src}
             backgroundPosition='left'
             backgroundRepeat={'no-repeat'}
             backgroundSize={'cover'}
             w='100%'
         >
+            <Link id='Home' />
             <Header />
             <VStack
                 minHeight='100vh'

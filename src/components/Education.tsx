@@ -8,13 +8,19 @@ import {
 } from '@chakra-ui/react'
 import { CircleIconWrapper } from './CircleIconWrapper'
 import { FaBook } from 'react-icons/fa'
-import Card from './Card'
+import { useEffect, useRef } from 'react'
+import useIntersection from '../hooks/useIntersection'
 
+import Card from './Card'
 import data from '../data'
-function Education() {
-    const EducationCards = data.education.map((school) => {
+function Education({ onVisible }: SectionProps) {
+    const ref = useRef<HTMLDivElement>()
+    const isShowing = useIntersection(ref, '-100px')
+
+    const EducationCards = data.education.map((school, index) => {
         return (
             <Card
+                key={index}
                 image='https://news.njit.edu/sites/news/files/styles/16by9-banner/public/eberhardt_HDR.jpg?itok=1OTeWInX'
                 title={school.institution}
                 subTitle={`${school.level} ${school.major}`}
@@ -22,8 +28,15 @@ function Education() {
             />
         )
     })
+
+    useEffect(() => {
+        if (isShowing) {
+            onVisible()
+        }
+    }, [isShowing])
+
     return (
-        <VStack paddingY={'50px'} spacing={50}>
+        <VStack paddingY={'50px'} spacing={50} ref={ref}>
             <Link id='Education' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>

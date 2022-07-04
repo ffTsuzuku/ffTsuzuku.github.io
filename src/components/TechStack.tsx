@@ -11,6 +11,8 @@ import {
     Progress,
     useColorModeValue,
 } from '@chakra-ui/react'
+import { useEffect, useRef } from 'react'
+import useIntersection from '../hooks/useIntersection'
 
 import { VscCode } from 'react-icons/vsc'
 
@@ -19,13 +21,22 @@ import ProgressBar from './ProgressBar'
 
 import data from '../data'
 
-function TechStack() {
+function TechStack({ onVisible }: SectionProps) {
+    const ref = useRef<HTMLDivElement>()
+    const isShowing = useIntersection(ref, '-200px')
+
     const bgColor = useColorModeValue('#DEE4E7', '#282834')
-    const progressFill = useColorModeValue('purple.400', 'purple.700')
+
+    useEffect(() => {
+        if (isShowing) {
+            onVisible()
+        }
+    }, [isShowing])
 
     const SkillsJSX = data.techStack.map((skill) => {
         return (
             <CircularProgress
+                key={skill.name}
                 value={skill.proficiency}
                 color='purple.300'
                 size={'200px'}
@@ -43,7 +54,7 @@ function TechStack() {
         )
     })
     return (
-        <VStack backgroundColor={bgColor} paddingY={'50px'}>
+        <VStack backgroundColor={bgColor} paddingY={'50px'} ref={ref}>
             <Link id='TechStack' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>

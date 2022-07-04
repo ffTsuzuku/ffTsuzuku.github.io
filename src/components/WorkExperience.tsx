@@ -1,9 +1,6 @@
 import {
-    useColorModeValue,
     Box,
-    Flex,
     HStack,
-    Icon,
     Link,
     List,
     ListIcon,
@@ -14,26 +11,37 @@ import {
     TabPanel,
     TabPanels,
     Text,
-    Divider,
     VStack,
 } from '@chakra-ui/react'
 import { MdWork, MdCheckCircle } from 'react-icons/md'
 import { RiCodeSLine } from 'react-icons/ri'
 import { ImBriefcase } from 'react-icons/im'
+import { useEffect, useRef } from 'react'
+import useIntersection from '../hooks/useIntersection'
 
 import Data from '../data'
 import { CircleIconWrapper } from './CircleIconWrapper'
 
-function WorkExperience() {
+function WorkExperience({ onVisible }: SectionProps) {
+    const ref = useRef<HTMLDivElement>()
+    const isShowing = useIntersection(ref, '-300px')
+
     const { workExperience } = Data
+
+    useEffect(() => {
+        if (isShowing) {
+            onVisible()
+        }
+    }, [isShowing])
 
     const CompanyListJSX: JSX.Element[] = []
     const CompanyDetailJSX: JSX.Element[] = []
 
-    workExperience.forEach((company) => {
+    workExperience.forEach((company, index) => {
         const { title, period, responsibilities, companyName } = company
         CompanyListJSX.push(
             <Tab
+                key={index}
                 _selected={{
                     boxShadow: 'none',
                     borderBottom: '5px solid red',
@@ -49,17 +57,19 @@ function WorkExperience() {
         )
         const PeriodJSX = <Text fontSize={{ base: '25px' }}>{period}</Text>
 
-        const ResponsibilitiesJSX = responsibilities.map((responsibility) => {
-            return (
-                <ListItem>
-                    <ListIcon as={RiCodeSLine} color='green.500' />
-                    {responsibility}
-                </ListItem>
-            )
-        })
+        const ResponsibilitiesJSX = responsibilities.map(
+            (responsibility, index) => {
+                return (
+                    <ListItem key={index}>
+                        <ListIcon as={RiCodeSLine} color='green.500' />
+                        {responsibility}
+                    </ListItem>
+                )
+            }
+        )
 
         CompanyDetailJSX.push(
-            <TabPanel marginLeft={'auto'}>
+            <TabPanel marginLeft={'auto'} key={index}>
                 <VStack>
                     <List spacing={4} marginTop={4}>
                         {TitleJSX}
@@ -74,7 +84,7 @@ function WorkExperience() {
     return (
         <>
             <Link id='WorkExperience'></Link>
-            <Box maxWidth={'100vw'}>
+            <Box maxWidth={'100vw'} ref={ref}>
                 <HStack justifyContent={'center'} marginY={10}>
                     <CircleIconWrapper icon={ImBriefcase} />
                     <Text fontSize={{ base: '20px', md: '30px', lg: '40px' }}>
