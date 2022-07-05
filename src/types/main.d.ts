@@ -6,7 +6,7 @@ declare type AvailableSections =
     | 'Github'
 
 interface SectionProps {
-    onVisible: () => void
+    element: React.RefObject<any>
 }
 
 interface Section {

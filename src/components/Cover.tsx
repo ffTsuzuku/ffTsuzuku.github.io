@@ -13,16 +13,10 @@ import {
 import darkWallpaper from '../imgs/s1.jpg'
 import lightWallpaper from '../imgs/peotry.jpg'
 import Header from './Header'
-import { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, LegacyRef } from 'react'
 import useIntersection from '../hooks/useIntersection'
 
-interface CoverProps {
-    onVisible: () => void
-}
-function Cover({ onVisible }: CoverProps) {
-    const ref = useRef<HTMLDivElement>()
-    const isShowing = useIntersection(ref, '-300px')
-
+function Cover({ element }: SectionProps) {
     const { colorMode } = useColorMode()
 
     const src = colorMode === 'dark' ? darkWallpaper : lightWallpaper
@@ -31,15 +25,9 @@ function Cover({ onVisible }: CoverProps) {
         'rgba(85, 60, 154, 0.80)'
     )
 
-    useEffect(() => {
-        if (isShowing) {
-            onVisible()
-        }
-    }, [isShowing])
-
     return (
         <Box
-            ref={ref}
+            ref={element}
             backgroundImage={src}
             backgroundPosition='left'
             backgroundRepeat={'no-repeat'}

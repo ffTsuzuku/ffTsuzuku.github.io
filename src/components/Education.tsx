@@ -9,14 +9,10 @@ import {
 import { CircleIconWrapper } from './CircleIconWrapper'
 import { FaBook } from 'react-icons/fa'
 import { useEffect, useRef } from 'react'
-import useIntersection from '../hooks/useIntersection'
 
 import Card from './Card'
 import data from '../data'
-function Education({ onVisible }: SectionProps) {
-    const ref = useRef<HTMLDivElement>()
-    const isShowing = useIntersection(ref, '-100px')
-
+function Education({ element }: SectionProps) {
     const EducationCards = data.education.map((school, index) => {
         return (
             <Card
@@ -29,14 +25,8 @@ function Education({ onVisible }: SectionProps) {
         )
     })
 
-    useEffect(() => {
-        if (isShowing) {
-            onVisible()
-        }
-    }, [isShowing])
-
     return (
-        <VStack paddingY={'50px'} spacing={50} ref={ref}>
+        <VStack paddingY={'50px'} spacing={50} ref={element}>
             <Link id='Education' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>

@@ -10,6 +10,7 @@ import {
     Icon,
     Progress,
     useColorModeValue,
+    useBreakpointValue,
 } from '@chakra-ui/react'
 import { useEffect, useRef } from 'react'
 import useIntersection from '../hooks/useIntersection'
@@ -21,17 +22,8 @@ import ProgressBar from './ProgressBar'
 
 import data from '../data'
 
-function TechStack({ onVisible }: SectionProps) {
-    const ref = useRef<HTMLDivElement>()
-    const isShowing = useIntersection(ref, '-200px')
-
+function TechStack({ element }: SectionProps) {
     const bgColor = useColorModeValue('#DEE4E7', '#282834')
-
-    useEffect(() => {
-        if (isShowing) {
-            onVisible()
-        }
-    }, [isShowing])
 
     const SkillsJSX = data.techStack.map((skill) => {
         return (
@@ -54,7 +46,7 @@ function TechStack({ onVisible }: SectionProps) {
         )
     })
     return (
-        <VStack backgroundColor={bgColor} paddingY={'50px'} ref={ref}>
+        <VStack backgroundColor={bgColor} paddingY={'50px'} ref={element}>
             <Link id='TechStack' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>

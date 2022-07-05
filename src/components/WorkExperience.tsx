@@ -22,17 +22,8 @@ import useIntersection from '../hooks/useIntersection'
 import Data from '../data'
 import { CircleIconWrapper } from './CircleIconWrapper'
 
-function WorkExperience({ onVisible }: SectionProps) {
-    const ref = useRef<HTMLDivElement>()
-    const isShowing = useIntersection(ref, '-300px')
-
+function WorkExperience({ element }: SectionProps) {
     const { workExperience } = Data
-
-    useEffect(() => {
-        if (isShowing) {
-            onVisible()
-        }
-    }, [isShowing])
 
     const CompanyListJSX: JSX.Element[] = []
     const CompanyDetailJSX: JSX.Element[] = []
@@ -84,7 +75,7 @@ function WorkExperience({ onVisible }: SectionProps) {
     return (
         <>
             <Link id='WorkExperience'></Link>
-            <Box maxWidth={'100vw'} ref={ref}>
+            <Box maxWidth={'100vw'} ref={element}>
                 <HStack justifyContent={'center'} marginY={10}>
                     <CircleIconWrapper icon={ImBriefcase} />
                     <Text fontSize={{ base: '20px', md: '30px', lg: '40px' }}>

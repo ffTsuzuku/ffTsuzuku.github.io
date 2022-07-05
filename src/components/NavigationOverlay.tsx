@@ -18,9 +18,9 @@ interface NavigationOverlay {
 export default function NavigationOverlay({
     currentlyViewing,
 }: NavigationOverlay) {
-    const breadCrumbFill = useColorModeValue('purple.700', 'whiteAlpha.700')
-    const currentlyViewingFill = useColorModeValue('purple.400', 'white')
-    const toolTipTextColor = useColorModeValue('yellow.400', 'purple.700')
+    const breadCrumbFill = useColorModeValue('blue.500', 'whiteAlpha.700')
+    const currentlyViewingFill = useColorModeValue('blue.200', 'white')
+    const toolTipTextColor = useColorModeValue('blue.400', 'purple.700')
 
     const linksJSX = links.map((link) => {
         const fillColor =
