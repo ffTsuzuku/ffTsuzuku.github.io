@@ -140,13 +140,13 @@ const data: User = {
             institution: 'NJIT',
             major: 'Computer Science',
             level: 'Masters',
-            period: 'On Hold - 2012',
+            period: '2019 - On Hold',
         },
         {
             institution: 'NJIT',
             major: 'Information Technology',
             level: 'Bachlors',
-            period: '2017 - 2012',
+            period: '2012 - 2017',
         },
     ],
 }
