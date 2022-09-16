@@ -63,9 +63,9 @@ function App() {
         showingTechStack,
     ])
 
+    const NavOverJSX = <NavigationOverlay currentlyViewing={currentlyViewing} />
     return (
         <div className='App'>
-            <NavigationOverlay currentlyViewing={currentlyViewing} />
             <Cover element={coverRef} />
             <WorkExperience element={workExperienceRef} />
             <TechStack element={techStackRef} />
