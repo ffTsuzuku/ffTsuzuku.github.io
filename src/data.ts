@@ -141,7 +141,7 @@ const data: User = {
             institution: 'NJIT',
             major: 'Computer Science',
             level: 'Masters',
-            period: '2019 - On Hold',
+            period: '2020 - On Hold',
         },
         {
             institution: 'NJIT',
