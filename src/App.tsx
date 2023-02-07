@@ -29,22 +29,26 @@ function App() {
     const techStackRef = useRef<HTMLDivElement>(null)
     const educationRef = useRef<HTMLDivElement>(null)
 
-    const showingCover = useIntersection(coverRef, '0px', interSectionThreshold)
-    const showingWorkExperience = useIntersection(
-        workExperienceRef,
-        '0px',
-        interSectionThreshold
-    )
-    const showingTechStack = useIntersection(
-        techStackRef,
-        '0px',
-        interSectionThreshold
-    )
-    const showingEducation = useIntersection(
-        educationRef,
-        '0px',
-        interSectionThreshold
-    )
+    const showingCover = useIntersection({
+        element: coverRef,
+        rootMargin: '0px',
+        threshold: interSectionThreshold,
+    })
+    const showingWorkExperience = useIntersection({
+        element: workExperienceRef,
+        rootMargin: '0px',
+        threshold: interSectionThreshold,
+    })
+    const showingTechStack = useIntersection({
+        element: techStackRef,
+        rootMargin: '0px',
+        threshold: interSectionThreshold,
+    })
+    const showingEducation = useIntersection({
+        element: educationRef,
+        rootMargin: '0px',
+        threshold: interSectionThreshold,
+    })
 
     useEffect(() => {
         if (showingCover) {

@@ -1,10 +1,18 @@
 import React, { useState, useEffect, LegacyRef } from 'react'
 
-const useIntersection = (
-    element: React.RefObject<any> | undefined,
-    rootMargin: string,
-    threshold = 0.8
-) => {
+interface useIntersectionProps {
+    element: React.RefObject<any> | undefined
+    rootMargin: string
+    threshold?: number
+    onIntersect?: (element: IntersectionObserverEntry) => void
+}
+
+const useIntersection = ({
+    element,
+    rootMargin,
+    threshold = 0.8,
+    onIntersect,
+}: useIntersectionProps) => {
     const [isVisible, setState] = useState(false)
 
     useEffect(() => {
@@ -12,6 +20,7 @@ const useIntersection = (
         const observer = new IntersectionObserver(
             ([entry]) => {
                 setState(entry.isIntersecting)
+                onIntersect?.(entry)
             },
             { rootMargin, threshold }
         )
