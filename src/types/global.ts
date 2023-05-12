@@ -18,6 +18,10 @@ const sections: Section[] = [
         label: 'Education',
         link: '#Education',
     },
+    {
+        label: 'Projects',
+        link: '#Projects',
+    },
 ]
 
 export { sections }

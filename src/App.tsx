@@ -114,7 +114,7 @@ function App() {
             <WorkExperience element={workExperienceRef} key={2} />,
             <TechStack element={techStackRef} key={3} />,
             <Education element={educationRef} key={4} />,
-            <Projects />,
+            <Projects element={projectsRef} key={5} />,
         ]
     }
     return <div className='App'>{Content}</div>
