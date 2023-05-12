@@ -46,18 +46,32 @@ function TechStack({ element }: SectionProps) {
         )
     })
     return (
-        <VStack backgroundColor={bgColor} paddingY={'50px'} ref={element}>
+        <VStack
+            backgroundColor={bgColor}
+            paddingY={'50px'}
+            ref={element}
+        >
             <Link id='TechStack' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>
                     <CircleIconWrapper icon={VscCode} />
-                    <Text fontSize={{ base: '20px', md: '30px', lg: '40px' }}>
+                    <Text
+                        fontSize={{
+                            base: '20px',
+                            md: '30px',
+                            lg: '40px',
+                        }}
+                    >
                         Tech Stack
                     </Text>
                     <Progress value={80} />
                 </HStack>
             </Flex>
-            <HStack justifyContent={'center'} wrap={'wrap'} width={'80%'}>
+            <HStack
+                justifyContent={'center'}
+                wrap={'wrap'}
+                width={'80%'}
+            >
                 {SkillsJSX}
             </HStack>
         </VStack>

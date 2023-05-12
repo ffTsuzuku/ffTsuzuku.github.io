@@ -29,7 +29,8 @@ function WorkExperience({ element }: SectionProps) {
     const CompanyDetailJSX: JSX.Element[] = []
 
     workExperience.forEach((company, index) => {
-        const { title, period, responsibilities, companyName } = company
+        const { title, period, responsibilities, companyName } =
+            company
         CompanyListJSX.push(
             <Tab
                 key={index}
@@ -46,13 +47,18 @@ function WorkExperience({ element }: SectionProps) {
                 {title}
             </Text>
         )
-        const PeriodJSX = <Text fontSize={{ base: '25px' }}>{period}</Text>
+        const PeriodJSX = (
+            <Text fontSize={{ base: '25px' }}>{period}</Text>
+        )
 
         const ResponsibilitiesJSX = responsibilities.map(
             (responsibility, index) => {
                 return (
                     <ListItem key={index}>
-                        <ListIcon as={RiCodeSLine} color='green.500' />
+                        <ListIcon
+                            as={RiCodeSLine}
+                            color='green.500'
+                        />
                         {responsibility}
                     </ListItem>
                 )
@@ -78,7 +84,13 @@ function WorkExperience({ element }: SectionProps) {
             <Box maxWidth={'100vw'} ref={element}>
                 <HStack justifyContent={'center'} marginY={10}>
                     <CircleIconWrapper icon={ImBriefcase} />
-                    <Text fontSize={{ base: '20px', md: '30px', lg: '40px' }}>
+                    <Text
+                        fontSize={{
+                            base: '20px',
+                            md: '30px',
+                            lg: '40px',
+                        }}
+                    >
                         Work Experience
                     </Text>
                 </HStack>

@@ -11,6 +11,11 @@ import {
 import { AiFillThunderbolt } from 'react-icons/ai'
 import { IconType } from 'react-icons'
 
+import pomodoroScreenshot1 from './imgs/projects/mbpomodoro/s1.png'
+import pomodoroScreenshot2 from './imgs/projects/mbpomodoro/s2.png'
+import pomodoroScreenshot3 from './imgs/projects/mbpomodoro/s3.png'
+import { CarouselImage } from './components/ImageCarousel'
+
 interface Work {
     companyName: string
     title: string
@@ -32,11 +37,19 @@ interface School {
     major: string
 }
 
+interface Project {
+    name: string
+    screenshots: CarouselImage[]
+    description: string
+    github: string
+}
+
 interface User {
     name: string
     workExperience: Work[]
     techStack: Skill[]
     education: School[]
+    projects: Project[]
 }
 
 const data: User = {
@@ -134,6 +147,19 @@ const data: User = {
             proficiency: 60,
             icon: SiJava,
             iconFill: '#ec2025',
+        },
+    ],
+    projects: [
+        {
+            name: 'MBPomodoro',
+            screenshots: [
+                { image: pomodoroScreenshot1 },
+                { image: pomodoroScreenshot2 },
+                { image: pomodoroScreenshot3 },
+            ],
+            description:
+                'As a software developer, I created a Pomodoro app that provides a more calming and peaceful experience than traditional Pomodoro apps. To achieve this, I incorporated soothing meditation gong sounds as an alternative to the typical disruptive alarm noises. In addition to the calming sounds, the app allows users to customize time presets and easily switch between them. Users can also control the volume of the different sound effects in the app and save their settings locally, eliminating the need for creating an account. To enhance usability, I added gesture controls through Bluetooth headphone integration. This allows users to start and pause the timer with simple gestures, eliminating the need to touch the phone or computer. Through the creation of this app, I have honed my skills in user interface design, audio integration, and mobile application development.',
+            github: 'https://github.com/ffTsuzuku/MBPomodoro',
         },
     ],
     education: [

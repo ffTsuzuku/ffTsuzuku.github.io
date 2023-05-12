@@ -4,6 +4,7 @@ declare type AvailableSections =
     | 'Education'
     | 'Tech Stack'
     | 'Github'
+    | 'Projects'
 
 interface SectionProps {
     element: React.RefObject<any>
