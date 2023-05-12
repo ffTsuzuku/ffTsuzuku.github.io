@@ -31,7 +31,13 @@ function Education({ element }: SectionProps) {
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>
                     <CircleIconWrapper icon={FaBook} />
-                    <Text fontSize={{ base: '20px', md: '30px', lg: '40px' }}>
+                    <Text
+                        fontSize={{
+                            base: '20px',
+                            md: '30px',
+                            lg: '40px',
+                        }}
+                    >
                         Education
                     </Text>
                 </HStack>

@@ -55,7 +55,9 @@ const Projects = ({ element }: SectionProps) => {
                     ml={10}
                 >
                     <Text noOfLines={[8, 20]}>{description}</Text>
-                    <Button>Github</Button>
+                    <Link href={github} target={'_blank'}>
+                        <Button>Github</Button>
+                    </Link>
                 </VStack>
             </Flex>
         )
@@ -63,12 +65,12 @@ const Projects = ({ element }: SectionProps) => {
 
     return (
         <>
-            <Link id='Projects'></Link>
             <Box
                 maxWidth={'100vw'}
                 ref={element}
                 backgroundColor={bgColor}
             >
+                <Link id='Projects' />
                 <HStack
                     justifyContent={'center'}
                     marginY={10}
