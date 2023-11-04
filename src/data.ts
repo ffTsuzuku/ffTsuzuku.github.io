@@ -14,6 +14,9 @@ import { IconType } from 'react-icons'
 import pomodoroScreenshot1 from './imgs/projects/mbpomodoro/s1.png'
 import pomodoroScreenshot2 from './imgs/projects/mbpomodoro/s2.png'
 import pomodoroScreenshot3 from './imgs/projects/mbpomodoro/s3.png'
+
+import mbblocker1 from './imgs/projects/mbblocker/1.png'
+
 import { CarouselImage } from './components/ImageCarousel'
 
 interface Work {
@@ -62,6 +65,7 @@ const data: User = {
             responsibilities: [
                 'Full Stack Software Developer working in ReactJS, PHP/Laravel, MySQL, Node, TypeScript and some Python.',
                 'Was made lead front-end developer of several projects one of which was a web gallery client that allows for advanced AI-Object Detection, AI-Based Filtering, and Weather Tracking, which is being used by Amazon Facilities',
+                'Lead Back-end developer in charge of designing and coding the back-end api for a CRM application.',
                 'Wrote a BIM Model Viewer that allows customers to view 3D renderings of their facilities both through a web canvas and VR Headset. ',
                 'Maintain a large portion of the companies repositories.',
                 'Migrated Code Bases from Angular 1 to React, which greatly reduced the number of bugs, and improved application responsiveness',
@@ -150,6 +154,13 @@ const data: User = {
         },
     ],
     projects: [
+        {
+            name: 'MBBlocker',
+            screenshots: [{ image: mbblocker1 }],
+            description:
+                'An easy to use and beautiful Chrome Extension for blocking websites. Created to boost my productivity and learn chrome extension development.',
+            github: 'https://github.com/ffTsuzuku/MBBlocker',
+        },
         {
             name: 'MBPomodoro',
             screenshots: [

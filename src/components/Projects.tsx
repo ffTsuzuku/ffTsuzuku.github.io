@@ -27,6 +27,7 @@ const Projects = ({ element }: SectionProps) => {
 
     const ProjectListJSX: JSX.Element[] = []
     const ProjectDetailsJSX: JSX.Element[] = []
+    const ProjectDetailsListJSX: JSX.Element[] = []
 
     for (const project of projects) {
         const { name, github, description, screenshots } = project
@@ -63,19 +64,17 @@ const Projects = ({ element }: SectionProps) => {
         )
     }
 
+    for (const detail of ProjectDetailsJSX) {
+        ProjectDetailsListJSX.push(
+            <TabPanel textAlign={'start'}>{detail}</TabPanel>
+        )
+    }
+
     return (
         <>
-            <Box
-                maxWidth={'100vw'}
-                ref={element}
-                backgroundColor={bgColor}
-            >
+            <Box maxWidth={'100vw'} ref={element} backgroundColor={bgColor}>
                 <Link id='Projects' />
-                <HStack
-                    justifyContent={'center'}
-                    marginY={10}
-                    paddingTop={10}
-                >
+                <HStack justifyContent={'center'} marginY={10} paddingTop={10}>
                     <CircleIconWrapper icon={ImBriefcase} />
                     <Text
                         fontSize={{
@@ -96,9 +95,7 @@ const Projects = ({ element }: SectionProps) => {
                         {ProjectListJSX}
                     </TabList>
 
-                    <TabPanels textAlign={'start'}>
-                        {ProjectDetailsJSX}
-                    </TabPanels>
+                    <TabPanels>{ProjectDetailsListJSX}</TabPanels>
                 </Tabs>
             </Box>
         </>
