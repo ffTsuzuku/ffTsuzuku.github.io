@@ -75,7 +75,11 @@ function Cover({ element }: SectionProps) {
                 spacing={5}
             >
                 <Text
-                    fontSize={{ base: '35px', md: '60px', lg: '76px' }}
+                    fontSize={{
+                        base: '35px',
+                        md: '60px',
+                        lg: '76px',
+                    }}
                     ref={jobTitleRef}
                     opacity={0}
                     transition={'opacity 2s'}
@@ -83,7 +87,11 @@ function Cover({ element }: SectionProps) {
                     FullStack Developer
                 </Text>
                 <Text
-                    fontSize={{ base: '30px', md: '50px', lg: '60px' }}
+                    fontSize={{
+                        base: '30px',
+                        md: '50px',
+                        lg: '60px',
+                    }}
                     opacity={0}
                     transition={'opacity 5s'}
                     ref={experienceRef}
@@ -100,14 +108,19 @@ function Cover({ element }: SectionProps) {
                     backgroundColor={blurbBgColor}
                     borderRadius={'10px'}
                     shadow={'dark-lg'}
-                    textAlign={{ sm: 'center', md: 'center', lg: 'left' }}
+                    textAlign={{
+                        sm: 'center',
+                        md: 'center',
+                        lg: 'left',
+                    }}
                     fontSize={{ base: '20px', md: '25px' }}
                 >
-                    Highly driven and experienced software developer who has a
-                    passion for learning and sharing knowledge with others.
+                    Highly driven and experienced software developer
+                    who has a passion for learning and sharing
+                    knowledge with others.
                 </Text>
                 <Link
-                    href='https://drive.google.com/uc?id=190hE2RrXQBZC5qqkx-IOrQ0WHcAn310R&authuser=0&export=download'
+                    href='https://drive.google.com/open?id=10iI2tDjdhJ4Qi710ji7cces2ZTYuLh-U&authuser=0&export=download'
                     target={'_blank'}
                 >
                     <Button
