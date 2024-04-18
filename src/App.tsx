@@ -16,7 +16,6 @@ import { useEffect, useRef, useState } from 'react'
 import { useBreakpointValue } from '@chakra-ui/react'
 
 import useIntersection from './hooks/useIntersection'
-
 function App() {
     const interSectionThreshold = useBreakpointValue({
         base: 0.3,
