@@ -17,6 +17,10 @@ import pomodoroScreenshot3 from './imgs/projects/mbpomodoro/s3.png'
 
 import mbblocker1 from './imgs/projects/mbblocker/1.png'
 
+import tictactoe1 from './imgs/projects/tic_tac_toe/site.png'
+import tictactoe2 from './imgs/projects/tic_tac_toe/board.png'
+import tictactoe3 from './imgs/projects/tic_tac_toe/game_over.png'
+
 import { CarouselImage } from './components/ImageCarousel'
 
 interface Work {
@@ -160,6 +164,17 @@ const data: User = {
         },
     ],
     projects: [
+        {
+            name: 'Tic Tac Toe',
+            screenshots: [
+                { image: tictactoe1 },
+                { image: tictactoe2 },
+                { image: tictactoe3 },
+            ],
+            description:
+                "This project serves as a demonstration of various state management techniques and optimization strategies commonly used in React applications. Whether you're new to React or looking to enhance your understanding of state management, this repository aims to provide clear examples and explanations for educational purposes.",
+            github: 'https://github.com/ffTsuzuku/tic-tac-toe',
+        },
         {
             name: 'MBBlocker',
             screenshots: [{ image: mbblocker1 }],
