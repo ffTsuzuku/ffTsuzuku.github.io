@@ -21,6 +21,8 @@ import tictactoe1 from './imgs/projects/tic_tac_toe/site.png'
 import tictactoe2 from './imgs/projects/tic_tac_toe/board.png'
 import tictactoe3 from './imgs/projects/tic_tac_toe/game_over.png'
 
+import githubsearch1 from './imgs/projects/github_search/screenshot.png'
+
 import { CarouselImage } from './components/ImageCarousel'
 
 interface Work {
@@ -164,6 +166,12 @@ const data: User = {
         },
     ],
     projects: [
+		{
+			name: 'Github Search',
+			screenshots: [{image: githubsearch1}],
+			description: "This repository provides a beautiful interface for searching for repositories belonging to a user or organization. Use the filters and sorting tools to quickly find and organize repositories.",
+			github: "https://github.com/ffTsuzuku/github_search?tab=readme-ov-file"
+		},
         {
             name: 'Tic Tac Toe',
             screenshots: [
