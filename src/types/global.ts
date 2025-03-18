@@ -1,26 +1,30 @@
 const sections: Section[] = [
     {
         label: 'Home',
-        link: '#Home',
+        link: '/#Home',
     },
 
     {
         label: 'Work Experience',
-        link: '#WorkExperience',
+        link: '/#WorkExperience',
     },
 
     {
         label: 'Tech Stack',
-        link: '#TechStack',
+        link: '/#TechStack',
     },
 
     {
         label: 'Education',
-        link: '#Education',
+        link: '/#Education',
     },
     {
         label: 'Projects',
-        link: '#Projects',
+        link: '/#Projects',
+    },
+    {
+        label: 'DSA',
+        link: '/dsa',
     },
 ]
 
