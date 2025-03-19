@@ -46,8 +46,8 @@ function Header(
   const { colorMode, toggleColorMode } = useColorMode();
   const menuItemUnderLineColor = useColorModeValue("yellow.400", "yellow.500");
   const menuItemBgColor = useColorModeValue(
-    menuItemBgColorTheme[0] ?? "purple.600",
-    menuItemBgColorTheme[1] ?? "purple.800",
+    menuItemBgColorTheme[0] || "purple.600",
+    menuItemBgColorTheme[1] || "purple.800",
   );
   const { isOpen, onOpen, onClose } = useDisclosure();
   const switchToggled = useColorModeValue(true, false);

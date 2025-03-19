@@ -11,6 +11,7 @@ import {
   Th,
   Thead,
   Tr,
+	useColorModeValue,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import roadmap from "../data/lc_roadmap";
@@ -27,6 +28,7 @@ import { useState } from "react";
 function DSA() {
   const [search, setSearch] = useState("");
   const [selectedStep, setSelectedStep] = useState("");
+	const headerTextColor = useColorModeValue("#e55858", "white")
   const open_url = (url?: string) => {
     if (!url) {
       return;
@@ -86,8 +88,8 @@ function DSA() {
   return (
     <>
       <Header
-        sectionTextColor={"#e55858"}
-        menuItemBgColorTheme={["pink", "lightgray"]}
+        sectionTextColor={headerTextColor}
+        menuItemBgColorTheme={["lightgray", ""]}
       />
       <Flex p={3} gap={3}>
         <InputGroup>
