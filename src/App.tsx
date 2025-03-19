@@ -39,12 +39,10 @@ function App() {
 	])
 
 
-  let Content = [];
+  let Content = [<RouterProvider router={router} key={1}/>]
   if (showRenderSS) {
-    Content = [<MatrixRain key={0} />];
-  } else {
-		Content = [<RouterProvider router={router} />]
-  }
+    Content.unshift(<MatrixRain key={0} />);
+  } 
 
   return <div className="App">{Content}</div>;
 }

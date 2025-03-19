@@ -52,7 +52,7 @@ const MatrixRain = () => {
     }, [])
 
     return (
-        <Flex w={'100%'} h={'100vh'} backgroundColor={'black'}>
+        <Flex w={'100%'} h={'100vh'} backgroundColor={'black'} position={'fixed'} zIndex={9999}>
             <canvas
                 ref={matrixCanvas}
                 style={{ width: '100%', height: '100vh' }}
