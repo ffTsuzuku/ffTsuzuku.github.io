@@ -15,4 +15,5 @@ interface Section {
     label: AvailableSections
     link: string
 	isFragment: bool
+}
 
