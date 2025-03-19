@@ -80,7 +80,7 @@ function WorkExperience({ element }: SectionProps) {
 
     return (
         <>
-            <Link id='WorkExperience'></Link>
+            <Box id='WorkExperience'></Box>
             <Box maxWidth={'100vw'} ref={element}>
                 <HStack justifyContent={'center'} marginY={10}>
                     <CircleIconWrapper icon={ImBriefcase} />

@@ -1,9 +1,8 @@
 import "./App.css";
 import MatrixRain from "./components/MatrixScreenSaver";
 import { useEffect, useRef, useState } from "react";
-import { useBreakpointValue } from "@chakra-ui/react";
 import Main from "./Pages/Main";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import DSA from "./Pages/DSA";
 
 function App() {
@@ -33,13 +32,15 @@ function App() {
     return () => clearInterval(handler);
   }, []);
 
-	const router = createBrowserRouter([
-		{path: '/', element: <Main />},
-		{path: '/dsa', element: <DSA />}
-	])
+  let Content = [
+		<HashRouter key={1}>
+			<Routes>
+				<Route element={<Main />} path={'/'}/>
+				<Route element={<DSA />} path={'/dsa'}/>
+			</Routes>
+		</HashRouter>
+	]
 
-
-  let Content = [<RouterProvider router={router} key={1}/>]
   if (showRenderSS) {
     Content.unshift(<MatrixRain key={0} />);
   } 

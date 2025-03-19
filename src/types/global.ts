@@ -1,30 +1,36 @@
 const sections: Section[] = [
     {
         label: 'Home',
-        link: '/#Home',
+        link: '/',
+		isFragment: false,
     },
 
     {
         label: 'Work Experience',
-        link: '/#WorkExperience',
+        link: 'WorkExperience',
+		isFragment: true,
     },
 
     {
         label: 'Tech Stack',
-        link: '/#TechStack',
+        link: 'TechStack',
+		isFragment: true,
     },
 
     {
         label: 'Education',
-        link: '/#Education',
+        link: 'Education',
+		isFragment: true,
     },
     {
         label: 'Projects',
-        link: '/#Projects',
+        link: 'Projects',
+		isFragment: true,
     },
     {
         label: 'DSA',
-        link: '/dsa',
+        link: '/#/dsa',
+		isFragment: false,
     },
 ]
 

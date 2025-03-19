@@ -60,10 +60,54 @@ function Header(
     backgroundColor: menuItemBgColor,
     borderRadius: "3px",
   };
+  const scrollToElement = (elementId) => {
+    if (window.location.hash !== "#/") {
+      window.location.hash = "#/";
+
+      // Wait for the hash change to take effect before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(elementId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   const HeaderItemsJSX = menuItems.map((item) => {
+    if (!item.isFragment) {
+      return (
+        <Link key={item.label} role="group" href={item.link} _hover={{}}>
+          <Flex
+            padding={"8px 5px 3px 5px"}
+            justifyContent={"center"}
+            alignItems="center"
+            cursor="pointer"
+            _groupHover={MenuItemTextHoverStlyes}
+          >
+            {item.label}
+          </Flex>
+          <Box
+            marginTop={"5px"}
+            border={"2px solid transparent"}
+            borderRadius="3px"
+            _groupHover={{ borderColor: menuItemUnderLineColor }}
+          />
+        </Link>
+      );
+    }
     return (
-      <Link key={item.label} role="group" href={item.link} _hover={{}}>
+      <Box
+        key={item.label}
+        role="group"
+        _hover={{}}
+        onClick={() => scrollToElement(item.link)}
+      >
         <Flex
           padding={"8px 5px 3px 5px"}
           justifyContent={"center"}
@@ -71,7 +115,7 @@ function Header(
           cursor="pointer"
           _groupHover={MenuItemTextHoverStlyes}
         >
-          {item.label}
+          {item.link}
         </Flex>
         <Box
           marginTop={"5px"}
@@ -79,15 +123,19 @@ function Header(
           borderRadius="3px"
           _groupHover={{ borderColor: menuItemUnderLineColor }}
         />
-      </Link>
+      </Box>
     );
   });
 
   const MenuOptionsJSX = menuItems.map((item) => {
     return (
-      <Link key={item.label} href={item.link}>
-        <MenuItem cursor="pointer">{item.label}</MenuItem>
-      </Link>
+      <MenuItem
+        cursor="pointer"
+        key={item.label}
+        onClick={() => scrollToElement(item.label)}
+      >
+        {item.label}
+      </MenuItem>
     );
   });
 
