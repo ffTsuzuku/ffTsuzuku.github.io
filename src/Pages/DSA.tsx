@@ -16,7 +16,7 @@ import {
 import Header from "../components/Header";
 import roadmap from "../data/lc_roadmap";
 import Search from "../imgs/icons/Search.tsx";
-import { useState } from "react";
+import React, { useState } from "react";
 
 /**
  * @todo: show difficulty of problems
@@ -39,12 +39,13 @@ function DSA() {
   const steps = Object.keys(roadmap);
   const selectable_steps = steps.map((step) => {
     return (
-      <option value={step} onChange={() => setSelectedStep(value)} key={step}>
+      <option value={step} onChange={() => setSelectedStep(step)} key={step}>
         {roadmap[step].section}
       </option>
     );
   });
   const steps_menu = (
+		//@ts-ignore
     <Select onChange={(e) => setSelectedStep(e.target.value)} placeholder="Step">
       {selectable_steps}
     </Select>
@@ -64,9 +65,9 @@ function DSA() {
 
     const problems_jsx = problems.map((problem) => {
       return (
+				//@ts-ignore
         <Tr key={problem.name}>
-          <Td>{problem.name}</Td>
-          <Td>
+          <Td>{problem.name}</Td><Td>
             <Button onClick={() => open_url(problem.url)}>Leetcode</Button>
           </Td>
           <Td>
