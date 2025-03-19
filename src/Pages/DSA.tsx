@@ -1,13 +1,4 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Button,
-  Flex,
-} from "@chakra-ui/react";
+import { Button, Table, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import Header from "../components/Header";
 import roadmap from "../data/lc_roadmap";
 
@@ -15,10 +6,11 @@ import roadmap from "../data/lc_roadmap";
  * @todo: make it so when header is hidden the menu button shows dsa
  * @todo: show difficulty of problems
  * @todo:  update main content
- *	increase percents of the skills 
- *	change 5 yrs exp to 8
+ * 	increase percents of the skills
+ * 	change 5 yrs exp to 8
  * @todo: fix light mode on this page
- * */
+ * @todo: make it so that loading the ss does not reset the page position
+ */
 function DSA() {
   const open_url = (url?: string) => {
     if (!url) {
@@ -27,43 +19,50 @@ function DSA() {
     window.open(url, "_blank");
   };
 
-  const SectionsJSX = Object.keys(roadmap).map((section) => {
-    return (
-      <AccordionItem>
-        <h2>
-          <AccordionButton>
-            <Box as="span" flex="1" textAlign="left">
-              {roadmap[section].section}
-            </Box>
-            <AccordionIcon />
-          </AccordionButton>
-        </h2>
-        <AccordionPanel pb={4}>
-          {roadmap[section].problems.map((problem) => {
-            return (
-              <Flex justifyContent={"space-between"} alignItems={"center"}>
-                {problem.name}
-                <Flex gap={3} m={3}>
-                  <Button onClick={() => open_url(problem.url)}>
-                    Leetcode
-                  </Button>
-                  <Button onClick={() => open_url(problem.solution)}>
-                    Solution
-                  </Button>
-                </Flex>
-              </Flex>
-            );
-          })}
-        </AccordionPanel>
-      </AccordionItem>
-    );
+  const rows_jsx = Object.keys(roadmap).map((step) => {
+    const section_data = roadmap[step];
+    const { problems } = section_data;
+
+    const problems_jsx = problems.map((problem) => {
+      return (
+        <Tr>
+          <Td>{problem.name}</Td>
+          <Td>
+            <Button onClick={() => open_url(problem.url)}>Leetcode</Button>
+          </Td>
+          <Td>
+            <Button
+              onClick={() => open_url(problem.solution)}
+              disabled={!problem.solution}
+            >
+              Solution
+            </Button>
+          </Td>
+        </Tr>
+      );
+    });
+
+    return problems_jsx;
   });
+
   return (
     <>
-      <Header />
-      <Accordion allowToggle>
-        {SectionsJSX}
-      </Accordion>
+			<Header 
+				sectionTextColor={'#e55858'}
+				menuItemBgColorTheme={['pink', 'lightgray']}
+			/>
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Question</Th>
+            <Th>Link</Th>
+            <Th>Solution</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {rows_jsx}
+        </Tbody>
+      </Table>
     </>
   );
 }
