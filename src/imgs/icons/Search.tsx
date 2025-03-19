@@ -8,7 +8,7 @@ function Search({width, height}: IconProps) {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 512 512"
       height={height ?? "200px"}
       width={width ?? "200px"}

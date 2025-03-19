@@ -1,9 +1,10 @@
 import {
-	InputLeftElement,
-	InputGroup,
   Button,
   Flex,
   Input,
+  InputGroup,
+  InputLeftElement,
+  Select,
   Table,
   Tbody,
   Td,
@@ -13,8 +14,8 @@ import {
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import roadmap from "../data/lc_roadmap";
-import Search from '../imgs/icons/Search.tsx'
-import {useState} from "react";
+import Search from "../imgs/icons/Search.tsx";
+import { useState } from "react";
 
 /**
  * @todo: make it so when header is hidden the menu button shows dsa
@@ -22,11 +23,10 @@ import {useState} from "react";
  * @todo:  update main content
  * 	increase percents of the skills
  * 	change 5 yrs exp to 8
- * @todo: fix light mode on this page
- * @todo: make it so that loading the ss does not reset the page position
  */
 function DSA() {
-	const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("");
+  const [selectedStep, setSelectedStep] = useState("");
   const open_url = (url?: string) => {
     if (!url) {
       return;
@@ -34,17 +34,36 @@ function DSA() {
     window.open(url, "_blank");
   };
 
-  const rows_jsx = Object.keys(roadmap).map((step) => {
+  // filter questions by roadmap steps
+  const steps = Object.keys(roadmap);
+  const selectable_steps = steps.map((step) => {
+    return (
+      <option value={step} onChange={() => setSelectedStep(value)} key={step}>
+        {roadmap[step].section}
+      </option>
+    );
+  });
+  const steps_menu = (
+    <Select onChange={(e) => setSelectedStep(e.target.value)} placeholder="Step">
+      {selectable_steps}
+    </Select>
+  );
+
+  const question_rows_jsx = steps.map((step) => {
     const section_data = roadmap[step];
     const { problems: all_problems } = section_data;
-		let problems = all_problems
-		if (search) {
-			problems = problems.filter(problem => problem.name.includes(search))
-		}
+    let problems = all_problems;
+
+    if (selectedStep && step !== selectedStep) {
+      problems = [];
+    }
+    if (search) {
+      problems = problems.filter((problem) => problem.name.includes(search));
+    }
 
     const problems_jsx = problems.map((problem) => {
       return (
-        <Tr>
+        <Tr key={problem.name}>
           <Td>{problem.name}</Td>
           <Td>
             <Button onClick={() => open_url(problem.url)}>Leetcode</Button>
@@ -70,30 +89,31 @@ function DSA() {
         sectionTextColor={"#e55858"}
         menuItemBgColorTheme={["pink", "lightgray"]}
       />
-      <Flex p={3}>
-				<InputGroup>
-					<InputLeftElement>
-						<Search width={'20px'} height={'20px'}/>
-					</InputLeftElement>
-					<Input 
-						value={search}
-						placeholder="Search Questions..."
-						onChange={(e) => setSearch(e.target.value)}
-					/>
-				</InputGroup>
+      <Flex p={3} gap={3}>
+        <InputGroup>
+          <InputLeftElement>
+            <Search width={"20px"} height={"20px"} />
+          </InputLeftElement>
+          <Input
+            value={search}
+            placeholder="Search Questions..."
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </InputGroup>
+        {steps_menu}
       </Flex>
-        <Table>
-          <Thead>
-            <Tr>
-              <Th>Question</Th>
-              <Th>Link</Th>
-              <Th>Solution</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {rows_jsx}
-          </Tbody>
-        </Table>
+      <Table>
+        <Thead>
+          <Tr>
+            <Th>Question</Th>
+            <Th>Link</Th>
+            <Th>Solution</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {question_rows_jsx}
+        </Tbody>
+      </Table>
     </>
   );
 }
