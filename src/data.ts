@@ -118,7 +118,7 @@ const data: User = {
         },
         {
             name: 'TypeScript',
-            proficiency: 90,
+            proficiency: 100,
             icon: SiTypescript,
             iconFill: '#3178c6',
         },
@@ -136,7 +136,7 @@ const data: User = {
         },
         {
             name: 'Chakra UI',
-            proficiency: 90,
+            proficiency: 100,
             icon: AiFillThunderbolt,
             iconFill: 'gold',
         },
@@ -148,7 +148,7 @@ const data: User = {
         },
         {
             name: 'Laravel',
-            proficiency: 80,
+            proficiency: 100,
             icon: SiLaravel,
             iconFill: '#ff2d20',
         },

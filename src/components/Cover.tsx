@@ -96,7 +96,7 @@ function Cover({ element }: SectionProps) {
                     transition={'opacity 5s'}
                     ref={experienceRef}
                 >
-                    5+ Years Experience
+                    8+ Years Experience
                 </Text>
                 <Text
                     ref={blurbRef}

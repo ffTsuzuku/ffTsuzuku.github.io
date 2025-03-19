@@ -19,7 +19,6 @@ import Search from "../imgs/icons/Search.tsx";
 import { useState } from "react";
 
 /**
- * @todo: make it so when header is hidden the menu button shows dsa
  * @todo: show difficulty of problems
  * @todo:  update main content
  * 	increase percents of the skills
