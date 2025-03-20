@@ -1,7 +1,20 @@
+export type ProblemTag =
+  | "Array"
+  | "Hashmap"
+  | "Sorting"
+  | "Merge Sort"
+  | "Heap"
+  | "Bucket Sort"
+  | "Divide and Conquer"
+  | "Radix Sort"
+  | "Counting Sort";
+
 export type Problem = {
   name: string;
   url: string;
   solution?: string;
+  tag?: ProblemTag[];
+  difficulty?: "Easy" | "Medium" | "Hard";
 };
 
 export type Roadmap = Record<
@@ -13,10 +26,36 @@ const roadmap: Roadmap = {
   "Step 1: Arrays & Hashing": {
     "section": "Array&Hashing",
     "problems": [
-      { "name": "Two Sum", "url": "https://leetcode.com/problems/two-sum/" },
+      {
+        "name": "Two Sum",
+        "url": "https://leetcode.com/problems/two-sum/",
+        "difficulty": "Easy",
+        "tag": ["Array", "Hashmap"],
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/HrKMnHl_C",
+      },
       {
         "name": "Contains Duplicate",
         "url": "https://leetcode.com/problems/contains-duplicate/",
+        "difficulty": "Easy",
+        "tag": ["Array", "Hashmap", "Sorting"],
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/xtNrWswT",
+      },
+      {
+        "name": "Sorting Array",
+        "url": "https://leetcode.com/problems/sort-an-array/description/",
+        "difficulty": "Medium",
+        "tag": [
+          "Array",
+          "Sorting",
+          "Merge Sort",
+          "Heap",
+          "Bucket Sort",
+          "Divide and Conquer",
+          "Radix Sort",
+          "Counting Sort",
+        ],
       },
       {
         "name": "Valid Anagram",
