@@ -7,7 +7,8 @@ export type ProblemTag =
   | "Bucket Sort"
   | "Divide and Conquer"
   | "Radix Sort"
-  | "Counting Sort";
+  | "Counting Sort"
+  | "String";
 
 export type Problem = {
   name: string;
@@ -60,10 +61,18 @@ const roadmap: Roadmap = {
       {
         "name": "Valid Anagram",
         "url": "https://leetcode.com/problems/valid-anagram/",
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/uSMu7WPi",
+        "difficulty": "Easy",
+        "tag": ["Hashmap", "Sorting", "Array", "String"],
       },
       {
         "name": "Group Anagrams",
         "url": "https://leetcode.com/problems/group-anagrams/",
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/-_sszk6e",
+        "difficulty": "Medium",
+        "tag": ["Array", "Sorting", "Hashmap", "String"],
       },
       {
         "name": "Top K Frequent Elements",
