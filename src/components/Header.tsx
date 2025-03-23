@@ -128,6 +128,26 @@ function Header(
   });
 
   const MenuOptionsJSX = menuItems.map((item) => {
+    if (!item.isFragment) {
+      return (
+        <Link key={item.label} role="group" href={item.link} _hover={{}}>
+          <Flex
+            padding={"8px 5px 3px 15px"}
+            alignItems="center"
+            cursor="pointer"
+            _groupHover={MenuItemTextHoverStlyes}
+          >
+            {item.label}
+          </Flex>
+          <Box
+            marginTop={"5px"}
+            border={"2px solid transparent"}
+            borderRadius="3px"
+            _groupHover={{ borderColor: menuItemUnderLineColor }}
+          />
+        </Link>
+      );
+    }
     return (
       <MenuItem
         cursor="pointer"
