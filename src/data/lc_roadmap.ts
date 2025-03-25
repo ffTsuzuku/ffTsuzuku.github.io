@@ -8,7 +8,8 @@ export type ProblemTag =
   | "Divide and Conquer"
   | "Radix Sort"
   | "Counting Sort"
-  | "String";
+  | "String"
+  | "Quick Select";
 
 export type Problem = {
   name: string;
@@ -77,6 +78,18 @@ const roadmap: Roadmap = {
       {
         "name": "Top K Frequent Elements",
         "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/ECngN3Yg",
+        "difficulty": "Medium",
+        "tag": [
+          "Array",
+          "Hashmap",
+          "Divide and Conquer",
+          "Bucket Sort",
+          "Counting Sort",
+          "Quick Select",
+          "Heap",
+        ],
       },
       {
         "name": "Product of Array Except Self",
