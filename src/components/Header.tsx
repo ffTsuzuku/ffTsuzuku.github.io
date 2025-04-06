@@ -175,7 +175,7 @@ function Header(
               color={sectionTextColor ?? "white"}
               as={Button}
               rightIcon={
-                <Show breakpoint="(max-width: 719px)">
+                <Show breakpoint="(max-width: 768px)">
                   <ChevronDownIcon />
                 </Show>
               }
@@ -184,7 +184,7 @@ function Header(
             >
               {data.name}
             </MenuButton>
-            <Show breakpoint="(max-width: 720px)">
+            <Show breakpoint="(max-width: 768px)">
               <MenuList>{MenuOptionsJSX}</MenuList>
             </Show>
           </Menu>
@@ -195,7 +195,7 @@ function Header(
           alignContent="center"
           color={sectionTextColor ?? "white"}
         >
-          <Show breakpoint="(min-width: 720px)">
+          <Show breakpoint="(min-width: 800px)">
             {HeaderItemsJSX}
           </Show>
           <Switch

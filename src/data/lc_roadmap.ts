@@ -9,7 +9,18 @@ export type ProblemTag =
   | "Radix Sort"
   | "Counting Sort"
   | "String"
-  | "Quick Select";
+  | "Quick Select"
+  | "Trie"
+  | "Backtracking"
+  | "Binary Search"
+  | "Design"
+  | "Bit Manipulation"
+  | "Palindrome"
+  | "Matrix"
+  | "Heap"
+  | "Greedy"
+  | "Priority Queue"
+  | "Linked List";
 
 export type Problem = {
   name: string;
@@ -212,7 +223,66 @@ const roadmap: Roadmap = {
       },
     ],
   },
-  "Step 3: Sliding Window": {
+  "Step 3: Stacks": {
+    "section": "Stacks",
+    "problems": [
+      {
+        "name": "Valid Parentheses",
+        "url": "https://leetcode.com/problems/valid-parentheses/",
+      },
+      {
+        "name": "Min Stack",
+        "url": "https://leetcode.com/problems/min-stack/",
+      },
+      {
+        "name": "Evaluate Reverse Polish Notation",
+        "url":
+          "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
+      },
+      {
+        "name": "Generate Parentheses",
+        "url": "https://leetcode.com/problems/generate-parentheses/",
+      },
+      {
+        "name": "Daily Temperatures",
+        "url": "https://leetcode.com/problems/daily-temperatures/",
+      },
+      {
+        "name": "Car Fleet",
+        "url": "https://leetcode.com/problems/car-fleet/",
+      },
+      {
+        "name": "Largest Rectangle in Histogram",
+        "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+      },
+      {
+        "name": "Next Greater Element I",
+        "url": "https://leetcode.com/problems/next-greater-element-i/",
+      },
+      {
+        "name": "Next Greater Element II",
+        "url": "https://leetcode.com/problems/next-greater-element-ii/",
+      },
+      {
+        "name": "Asteroid Collision",
+        "url": "https://leetcode.com/problems/asteroid-collision/",
+      },
+      {
+        "name": "Remove K Digits (Premium)",
+        "url": "https://leetcode.com/problems/remove-k-digits/",
+      },
+      {
+        "name": "Minimum Remove to Make Valid Parentheses (Premium)",
+        "url":
+          "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/",
+      },
+      {
+        "name": "Maximum Frequency Stack (Premium)",
+        "url": "https://leetcode.com/problems/maximum-frequency-stack/",
+      },
+    ],
+  },
+  "Step 4: Sliding Window": {
     "section": "Sliding Window",
     "problems": [
       {
@@ -274,65 +344,6 @@ const roadmap: Roadmap = {
         "name": "Replace the Substring for Balanced String (Premium)",
         "url":
           "https://leetcode.com/problems/replace-the-substring-for-balanced-string/",
-      },
-    ],
-  },
-  "Step 4: Stacks": {
-    "section": "Stacks",
-    "problems": [
-      {
-        "name": "Valid Parentheses",
-        "url": "https://leetcode.com/problems/valid-parentheses/",
-      },
-      {
-        "name": "Min Stack",
-        "url": "https://leetcode.com/problems/min-stack/",
-      },
-      {
-        "name": "Evaluate Reverse Polish Notation",
-        "url":
-          "https://leetcode.com/problems/evaluate-reverse-polish-notation/",
-      },
-      {
-        "name": "Generate Parentheses",
-        "url": "https://leetcode.com/problems/generate-parentheses/",
-      },
-      {
-        "name": "Daily Temperatures",
-        "url": "https://leetcode.com/problems/daily-temperatures/",
-      },
-      {
-        "name": "Car Fleet",
-        "url": "https://leetcode.com/problems/car-fleet/",
-      },
-      {
-        "name": "Largest Rectangle in Histogram",
-        "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
-      },
-      {
-        "name": "Next Greater Element I",
-        "url": "https://leetcode.com/problems/next-greater-element-i/",
-      },
-      {
-        "name": "Next Greater Element II",
-        "url": "https://leetcode.com/problems/next-greater-element-ii/",
-      },
-      {
-        "name": "Asteroid Collision",
-        "url": "https://leetcode.com/problems/asteroid-collision/",
-      },
-      {
-        "name": "Remove K Digits (Premium)",
-        "url": "https://leetcode.com/problems/remove-k-digits/",
-      },
-      {
-        "name": "Minimum Remove to Make Valid Parentheses (Premium)",
-        "url":
-          "https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/",
-      },
-      {
-        "name": "Maximum Frequency Stack (Premium)",
-        "url": "https://leetcode.com/problems/maximum-frequency-stack/",
       },
     ],
   },
@@ -507,7 +518,207 @@ const roadmap: Roadmap = {
       },
     ],
   },
-  "Step 8: Graphs": {
+  "Step 8: Tries": {
+    "section": "Tries",
+    "problems": [
+      {
+        "name": "Implement Trie (Prefix Tree)",
+        "url": "https://leetcode.com/problems/implement-trie-prefix-tree/",
+        "difficulty": "Medium",
+        "tag": ["Trie"],
+      },
+      {
+        "name": "Replace Words",
+        "url": "https://leetcode.com/problems/replace-words/",
+        "difficulty": "Medium",
+        "tag": ["Trie"],
+      },
+      {
+        "name": "Design Add and Search Words Data Structure",
+        "url":
+          "https://leetcode.com/problems/design-add-and-search-words-data-structure/",
+        "difficulty": "Medium",
+        "tag": ["Trie", "Design"],
+      },
+      {
+        "name": "Longest Word in Dictionary",
+        "url": "https://leetcode.com/problems/longest-word-in-dictionary/",
+        "difficulty": "Medium",
+        "tag": ["Trie", "Sorting"],
+      },
+      {
+        "name": "Prefix and Suffix Search",
+        "url": "https://leetcode.com/problems/prefix-and-suffix-search/",
+        "difficulty": "Hard",
+        "tag": ["Trie"],
+      },
+      {
+        "name": "Maximum XOR of Two Numbers in an Array",
+        "url":
+          "https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/",
+        "difficulty": "Medium",
+        "tag": ["Trie", "Bit Manipulation"],
+      },
+      {
+        "name": "Palindrome Pairs",
+        "url": "https://leetcode.com/problems/palindrome-pairs/",
+        "difficulty": "Hard",
+        "tag": ["Trie", "Palindrome"],
+      },
+      {
+        "name": "Add and Search Word - Data structure design",
+        "url":
+          "https://leetcode.com/problems/add-and-search-word-data-structure-design/",
+        "difficulty": "Medium",
+        "tag": ["Trie", "Backtracking"],
+      },
+      {
+        "name": "Stream of Characters",
+        "url": "https://leetcode.com/problems/stream-of-characters/",
+        "difficulty": "Hard",
+        "tag": ["Trie"],
+      },
+      {
+        "name": "Search Suggestions System",
+        "url": "https://leetcode.com/problems/search-suggestions-system/",
+        "difficulty": "Medium",
+        "tag": ["Trie", "Binary Search"],
+      },
+    ],
+  },
+  "Step 9: Backtracking": {
+    "section": "Backtracking",
+    "problems": [
+      {
+        "name": "Word Search",
+        "url": "https://leetcode.com/problems/word-search/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking", "Matrix"],
+      },
+      {
+        "name": "Letter Combinations of a Phone Number",
+        "url":
+          "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "Permutations",
+        "url": "https://leetcode.com/problems/permutations/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "Combination Sum",
+        "url": "https://leetcode.com/problems/combination-sum/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "N-Queens",
+        "url": "https://leetcode.com/problems/n-queens/",
+        "difficulty": "Hard",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "Sudoku Solver",
+        "url": "https://leetcode.com/problems/sudoku-solver/",
+        "difficulty": "Hard",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "Generate Parentheses",
+        "url": "https://leetcode.com/problems/generate-parentheses/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "Subsets",
+        "url": "https://leetcode.com/problems/subsets/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking"],
+      },
+      {
+        "name": "Restore IP Addresses",
+        "url": "https://leetcode.com/problems/restore-ip-addresses/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking", "String"],
+      },
+      {
+        "name": "Combination Sum II",
+        "url": "https://leetcode.com/problems/combination-sum-ii/",
+        "difficulty": "Medium",
+        "tag": ["Backtracking"],
+      },
+    ],
+  },
+  "Step 10: Heap/Priority Queue": {
+    "section": "Heap",
+    "problems": [
+      {
+        "name": "Kth Largest Element in an Array",
+        "url": "https://leetcode.com/problems/kth-largest-element-in-an-array/",
+        "difficulty": "Medium",
+        "tag": ["Heap", "Priority Queue"],
+      },
+      {
+        "name": "Top K Frequent Elements",
+        "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+        "difficulty": "Medium",
+        "tag": ["Heap", "Hashmap", "Priority Queue"],
+      },
+      {
+        "name": "Merge k Sorted Lists",
+        "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+        "difficulty": "Hard",
+        "tag": ["Heap", "Linked List", "Divide and Conquer", "Priority Queue"],
+      },
+      {
+        "name": "Find Median from Data Stream",
+        "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+        "difficulty": "Hard",
+        "tag": ["Heap", "Design", "Priority Queue"],
+      },
+      {
+        "name": "Last Stone Weight",
+        "url": "https://leetcode.com/problems/last-stone-weight/",
+        "difficulty": "Easy",
+        "tag": ["Heap", "Simulation", "Priority Queue"],
+      },
+      {
+        "name": "K Closest Points to Origin",
+        "url": "https://leetcode.com/problems/k-closest-points-to-origin/",
+        "difficulty": "Medium",
+        "tag": ["Heap", "Sorting", "Priority Queue"],
+      },
+      {
+        "name": "Task Scheduler",
+        "url": "https://leetcode.com/problems/task-scheduler/",
+        "difficulty": "Medium",
+        "tag": ["Heap", "Greedy", "Priority Queue"],
+      },
+      {
+        "name": "Reorganize String",
+        "url": "https://leetcode.com/problems/reorganize-string/",
+        "difficulty": "Medium",
+        "tag": ["Heap", "Greedy", "Priority Queue"],
+      },
+      {
+        "name": "Minimum Number of Refueling Stops",
+        "url":
+          "https://leetcode.com/problems/minimum-number-of-refueling-stops/",
+        "difficulty": "Hard",
+        "tag": ["Heap", "Greedy", "Priority Queue"],
+      },
+      {
+        "name": "Sort Characters By Frequency",
+        "url": "https://leetcode.com/problems/sort-characters-by-frequency/",
+        "difficulty": "Medium",
+        "tag": ["Heap", "Hashmap", "Priority Queue"],
+      },
+    ],
+  },
+  "Step 10: Graphs": {
     "section": "Graphs",
     "problems": [
       {
@@ -562,7 +773,7 @@ const roadmap: Roadmap = {
       },
     ],
   },
-  "Step 9: Dynamic Programming": {
+  "Step 10: Dynamic Programming": {
     "section": "Dynamic Programming",
     "problems": [
       {

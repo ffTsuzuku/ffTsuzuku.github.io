@@ -11,12 +11,14 @@ import {
   Th,
   Thead,
   Tr,
+	useBreakpointValue,
 	useColorModeValue,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
 import roadmap from "../data/lc_roadmap";
 import Search from "../imgs/icons/Search.tsx";
 import React, { useState } from "react";
+import MermaidRoadmap from "../components/MermaidRoadmap/MermaidRoadmap";
 
 /**
  * @todo: show difficulty of problems
@@ -34,6 +36,8 @@ function DSA() {
     }
     window.open(url, "_blank");
   };
+
+	const table_size = useBreakpointValue(['sm', 'md'])
 
   // filter questions by roadmap steps
   const steps = Object.keys(roadmap);
@@ -91,6 +95,7 @@ function DSA() {
         sectionTextColor={headerTextColor}
         menuItemBgColorTheme={["lightgray", ""]}
       />
+			<MermaidRoadmap />
       <Flex p={3} gap={3}>
         <InputGroup>
           <InputLeftElement>
@@ -104,7 +109,7 @@ function DSA() {
         </InputGroup>
         {steps_menu}
       </Flex>
-      <Table>
+      <Table size={table_size}>
         <Thead>
           <Tr>
             <Th>Question</Th>
@@ -120,4 +125,5 @@ function DSA() {
   );
 }
 
-export default DSA;
+export default DSA
+
