@@ -3,20 +3,21 @@ import { useEffect, useRef } from "react";
 import flowchart from "./flowchart";
 import { Flex, useColorModeValue } from "@chakra-ui/react";
 
-		// Initialize Mermaid with the selected theme
+// Initialize Mermaid with the selected theme
+mermaid.initialize({
+	startOnLoad: true,
+	securityLevel: "loose",
+	theme: 'base', 
+	themeVariables: {
+		lineColor: '#FFFFFF'
+	}
+})
 const MermaidRoadmap = () => {
   const bg_color = useColorModeValue("#323533", "#272d3a");
 	const ref = useRef<HTMLDivElement|undefined>();
  
 	useEffect(() => {
-		mermaid.initialize({
-			startOnLoad: true,
-			theme: 'base', 
-			themeVariables: {
-				lineColor: '#FFFFFF'
-			}
-		})
-		mermaid.run()
+		mermaid.contentLoaded()
 	}, [])
  
   return (
