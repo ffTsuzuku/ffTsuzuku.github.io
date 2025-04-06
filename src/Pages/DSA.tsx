@@ -18,7 +18,7 @@ import Header from "../components/Header";
 import roadmap from "../data/lc_roadmap";
 import Search from "../imgs/icons/Search.tsx";
 import React, { useState } from "react";
-import MermaidRoadmap from "../components/MermaidRoadmap/MermaidRoadmap";
+import Map from "../components/MermaidRoadmap/Roadmap/Map";
 
 /**
  * @todo: show difficulty of problems
@@ -95,7 +95,7 @@ function DSA() {
         sectionTextColor={headerTextColor}
         menuItemBgColorTheme={["lightgray", ""]}
       />
-			<MermaidRoadmap />
+			<Map />
       <Flex p={3} gap={3}>
         <InputGroup>
           <InputLeftElement>
