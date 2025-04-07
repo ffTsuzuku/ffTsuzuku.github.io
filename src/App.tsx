@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Main from "./Pages/Main";
 import {HashRouter, Route, Routes} from "react-router-dom";
 import DSA from "./Pages/DSA";
+import { DebugContextProvider } from "./context/DebugContext";
+import DebugInfo from "./components/DebugInfo";
 
 function App() {
   const [showRenderSS, setShouldRenderSS] = useState(false);
@@ -38,14 +40,19 @@ function App() {
 				<Route element={<Main />} path={'/'}/>
 				<Route element={<DSA />} path={'/dsa'}/>
 			</Routes>
-		</HashRouter>
+		</HashRouter>,
+		<DebugInfo key={2}/>
 	]
 
-  if (showRenderSS) {
+  if (showRenderSS && false) {
     Content.unshift(<MatrixRain key={0} />);
   } 
 
-  return <div className="App">{Content}</div>;
+	return <div className="App">
+		<DebugContextProvider>
+			{Content}
+		</DebugContextProvider>
+	</div>;
 }
 
 export default App;
