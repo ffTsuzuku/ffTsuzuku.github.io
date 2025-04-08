@@ -1,15 +1,5 @@
-import {
-  SiJava,
-  SiJavascript,
-  SiLaravel,
-  SiNodedotjs,
-  SiPhp,
-  SiPython,
-  SiReact,
-  SiTypescript,
-} from "react-icons/si";
-import { AiFillThunderbolt } from "react-icons/ai";
-import { IconType } from "react-icons";
+import Javscript from "./imgs/icons/Javascript";
+import Laravel from "./imgs/icons/Laravel";
 
 import pomodoroScreenshot1 from "./imgs/projects/mbpomodoro/s1.png";
 import pomodoroScreenshot2 from "./imgs/projects/mbpomodoro/s2.png";
@@ -24,9 +14,15 @@ import tictactoe3 from "./imgs/projects/tic_tac_toe/game_over.png";
 import githubsearch1 from "./imgs/projects/github_search/screenshot.png";
 
 import { CarouselImage } from "./components/ImageCarousel";
-import { ReactElement } from "react";
 import LinkedIn from "./imgs/icons/LinkedIn";
 import Github from "./imgs/icons/Github";
+import Java from "./imgs/icons/Java";
+import NodeJs from "./imgs/icons/NodeJs";
+import PHP from "./imgs/icons/PHP";
+import Python from "./imgs/icons/Python";
+import React from "./imgs/icons/React";
+import TypeScript from "./imgs/icons/Typescript";
+import ChakraUI from "./imgs/icons/ChakraUI";
 
 interface Work {
   companyName: string;
@@ -38,7 +34,7 @@ interface Work {
 interface Skill {
   name: string;
   proficiency: number;
-  icon: IconType;
+  icon: ({size, style, fill}) => JSX.Element;
   iconFill?: string;
 }
 
@@ -132,55 +128,55 @@ const data: User = {
     {
       name: "Javascript",
       proficiency: 100,
-      icon: SiJavascript,
+      icon: Javscript,
       iconFill: "#fcdc00",
     },
     {
       name: "TypeScript",
       proficiency: 100,
-      icon: SiTypescript,
+      icon: TypeScript,
       iconFill: "#3178c6",
     },
     {
       name: "React",
       proficiency: 100,
-      icon: SiReact,
+      icon: React,
       iconFill: "#61dafb",
     },
     {
       name: "Node",
       proficiency: 100,
-      icon: SiNodedotjs,
+      icon: NodeJs,
       iconFill: "#689f63",
     },
     {
       name: "Chakra UI",
       proficiency: 100,
-      icon: AiFillThunderbolt,
+      icon: ChakraUI,
       iconFill: "gold",
     },
     {
       name: "PHP",
       proficiency: 100,
-      icon: SiPhp,
+      icon: PHP,
       iconFill: "#8892bf",
     },
     {
       name: "Laravel",
       proficiency: 100,
-      icon: SiLaravel,
+      icon: Laravel,
       iconFill: "#ff2d20",
     },
     {
       name: "Python",
       proficiency: 50,
-      icon: SiPython,
+      icon: Python,
       iconFill: "#254f73",
     },
     {
       name: "Java",
       proficiency: 60,
-      icon: SiJava,
+      icon: Java,
       iconFill: "#ec2025",
     },
   ],

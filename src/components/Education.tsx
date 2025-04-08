@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react'
 import { CircleIconWrapper } from './CircleIconWrapper'
 import { FaBook } from 'react-icons/fa'
-import { useEffect, useRef } from 'react'
 
 import Card from './Card'
 import data from '../data'

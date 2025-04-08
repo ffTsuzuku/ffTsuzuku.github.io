@@ -8,9 +8,8 @@ import {
     Text,
     Container,
 } from '@chakra-ui/react'
-// Here we have used react-icons package for the icons
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi'
-// And react-slick as our Carousel Lib
+import LeftArrow from '../imgs/icons/ArrowLeft'
+import RightArrow from '../imgs/icons/ArrowRight'
 import Slider from 'react-slick'
 
 // Settings for the slider
@@ -101,7 +100,7 @@ export default function CaptionCarousel({
                 zIndex={2}
                 onClick={() => slider?.slickPrev()}
             >
-                <BiLeftArrowAlt
+                <LeftArrow
                     size='40px'
                     stroke='lightgray'
                     strokeWidth={'1px'}
@@ -122,7 +121,7 @@ export default function CaptionCarousel({
                 zIndex={2}
                 onClick={() => slider?.slickNext()}
             >
-                <BiRightArrowAlt
+                <RightArrow
                     size='40px'
                     stroke='lightgray'
                     strokeWidth={'1px'}
