@@ -15,10 +15,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-import {
-  ChevronDownIcon,
-  MoonIcon,
-} from "@chakra-ui/icons";
+import Moon from '../imgs/icons/Moon.tsx'
+import ChevDown from '../imgs/icons/ChevDown.tsx'
 
 import Sun from '../imgs/icons/Sun.tsx'
 import data from "../data";
@@ -46,7 +44,7 @@ function Header(
   const switchToggled = useColorModeValue(true, false);
 
   const ThemeIcon = colorMode === "dark"
-    ? <MoonIcon boxSize={"25px"} />
+    ? <Moon width={'25px'} />
     : <Sun size={25} />;
 
   const MenuItemTextHoverStlyes: CSSObject = {
@@ -169,7 +167,7 @@ function Header(
               as={Button}
               rightIcon={
                 <Show breakpoint="(max-width: 768px)">
-                  <ChevronDownIcon />
+                  <ChevDown width={'16px'}/>
                 </Show>
               }
               backgroundColor="transparent"
