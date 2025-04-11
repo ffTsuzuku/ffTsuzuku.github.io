@@ -3,7 +3,7 @@ const LeftArrow = ({size, stroke, strokeWidth}) => {
     <svg
       stroke={stroke ?? "currentColor"}
       fill="currentColor"
-      stroke-width={strokeWidth ?? 0}
+      strokeWidth={strokeWidth ?? 0}
       viewBox="0 0 24 24"
       height={size ?? "200px"}
       width={size ?? "200px"}

@@ -40,7 +40,7 @@ const Projects = ({ element }: SectionProps) => {
             </Tab>
         )
         ProjectDetailsJSX.push(
-            <Flex p={10} justifyContent={'center'}>
+            <Flex p={10} justifyContent={'center'} key={description}>
                 <CaptionCarousel
                     width={500}
                     height={250}
@@ -61,9 +61,9 @@ const Projects = ({ element }: SectionProps) => {
         )
     }
 
-    for (const detail of ProjectDetailsJSX) {
+    for (const id in ProjectDetailsJSX) {
         ProjectDetailsListJSX.push(
-            <TabPanel textAlign={'start'}>{detail}</TabPanel>
+            <TabPanel textAlign={'start'} key={id}>{ProjectDetailsJSX[id]}</TabPanel>
         )
     }
 

@@ -3,7 +3,7 @@ const Github = ({height, width}) => {
     <svg
       stroke="currentColor"
       fill="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 496 512"
       height={'auto'}
       width={width ?? '200px'}

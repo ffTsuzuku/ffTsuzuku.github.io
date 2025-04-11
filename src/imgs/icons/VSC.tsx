@@ -2,7 +2,7 @@ const VSC = ({size, fill, style}) => {
   return (
     <svg
       stroke="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 16 16"
       focusable="false"
       height={size ?? "200px"}

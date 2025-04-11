@@ -2,7 +2,7 @@ const BriefCase = ({ size, fill, style }) => {
   return (
     <svg
       stroke="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       version="1.1"
       viewBox="0 0 16 16"
       height={size ?? "30px"}

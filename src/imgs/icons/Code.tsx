@@ -2,7 +2,7 @@ const Code = ({style, fill, size, ...props}) => {
   return (
     <svg
       stroke="currentColor"
-      stroke-width="0"
+      strokeWidth="0"
       viewBox="0 0 24 24"
       height={size ?? "200px"}
       width={size ?? "200px"}

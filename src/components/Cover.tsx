@@ -11,10 +11,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import darkWallpaper from "../imgs/s1.jpg";
-import lightWallpaper from "../imgs/peotry.jpg";
+import darkWallpaper from "../imgs/s1.webp";
+import lightWallpaper from "../imgs/poetry.webp";
 import Header from "./Header";
-import React, { LegacyRef, useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef } from "react";
 import useIntersection from "../hooks/useIntersection";
 import { social_media } from "../data";
 import { useContext } from "react";
