@@ -13,11 +13,8 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react'
-import { MdWork, MdCheckCircle } from 'react-icons/md'
-import { RiCodeSLine } from 'react-icons/ri'
-import { ImBriefcase } from 'react-icons/im'
-import { useEffect, useRef } from 'react'
-import useIntersection from '../hooks/useIntersection'
+import BriefCase from '../imgs/icons/Briefcase'
+import Code from '../imgs/icons/Code'
 
 import Data from '../data'
 import { CircleIconWrapper } from './CircleIconWrapper'
@@ -27,6 +24,7 @@ function WorkExperience({ element }: SectionProps) {
 
     const CompanyListJSX: JSX.Element[] = []
     const CompanyDetailJSX: JSX.Element[] = []
+		const CodeIcon = <Code  size={'30px'} fill={'green'}/>
 
     workExperience.forEach((company, index) => {
         const { title, period, responsibilities, companyName } =
@@ -54,9 +52,9 @@ function WorkExperience({ element }: SectionProps) {
         const ResponsibilitiesJSX = responsibilities.map(
             (responsibility, index) => {
                 return (
-                    <ListItem key={index}>
+                    <ListItem key={index} >
                         <ListIcon
-                            as={RiCodeSLine}
+                            as={Code}
                             color='green.500'
                         />
                         {responsibility}
@@ -83,7 +81,7 @@ function WorkExperience({ element }: SectionProps) {
             <Box id='WorkExperience'></Box>
             <Box maxWidth={'100vw'} ref={element}>
                 <HStack justifyContent={'center'} marginY={10}>
-                    <CircleIconWrapper icon={ImBriefcase} />
+                    <CircleIconWrapper icon={BriefCase} />
                     <Text
                         fontSize={{
                             base: '20px',

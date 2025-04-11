@@ -1,5 +1,4 @@
 import {
-  Box,
   CircularProgress,
   CircularProgressLabel,
   Flex,
@@ -7,18 +6,13 @@ import {
   Link,
   Progress,
   Text,
-  useBreakpointValue,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { useEffect, useRef } from "react";
-import useIntersection from "../hooks/useIntersection";
 
-import { VscCode } from "react-icons/vsc";
+import VSC from "../imgs/icons/VSC";
 
 import { CircleIconWrapper } from "./CircleIconWrapper";
-import ProgressBar from "./ProgressBar";
-
 import data from "../data";
 
 function TechStack({ element }: SectionProps) {
@@ -53,7 +47,7 @@ function TechStack({ element }: SectionProps) {
       <Link id="TechStack" />
       <Flex maxWidth={"100vw"} justifyContent={"center"}>
         <HStack justifyContent={"center"}>
-          <CircleIconWrapper icon={VscCode} />
+          <CircleIconWrapper icon={VSC} />
           <Text
             fontSize={{
               base: "20px",

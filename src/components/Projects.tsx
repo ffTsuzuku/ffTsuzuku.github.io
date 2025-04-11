@@ -2,9 +2,6 @@ import {
     Box,
     HStack,
     Link,
-    List,
-    ListIcon,
-    ListItem,
     Tabs,
     TabList,
     Tab,
@@ -17,8 +14,8 @@ import {
     useColorModeValue,
 } from '@chakra-ui/react'
 import { CircleIconWrapper } from './CircleIconWrapper'
-import { ImBriefcase } from 'react-icons/im'
-import CaptionCarousel, { CarouselImage } from './ImageCarousel'
+import BriefCase from '../imgs/icons/Briefcase'
+import CaptionCarousel from './ImageCarousel'
 import Data from '../data'
 
 const Projects = ({ element }: SectionProps) => {
@@ -75,7 +72,7 @@ const Projects = ({ element }: SectionProps) => {
             <Box maxWidth={'100vw'} ref={element} backgroundColor={bgColor}>
                 <Link id='Projects' />
                 <HStack justifyContent={'center'} marginY={10} paddingTop={10}>
-                    <CircleIconWrapper icon={ImBriefcase} />
+                    <CircleIconWrapper icon={BriefCase} />
                     <Text
                         fontSize={{
                             base: '20px',

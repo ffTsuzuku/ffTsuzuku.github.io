@@ -19,7 +19,6 @@ import useIntersection from "../hooks/useIntersection";
 import { social_media } from "../data";
 import { useContext } from "react";
 import DebugContext from "../context/DebugContext";
-import DOTS from 'vanta/dist/vanta.dots.min'
 
 
 const open_social_link = (link) => {
@@ -79,22 +78,6 @@ const Socials = () => {
 function Cover({ element }: SectionProps) {
   const { colorMode } = useColorMode();
 
-	const [vantaEffects, setVantaEffects] = useState()
-	const vantaCSS = useColorModeValue(
-		{
-      color: '0x0',
-		  color2: '0xf0603',
-		  backgroundColor: '0xffffff',
-		}, 
-		{
-      color: '0xff8820',
-		  color2: '0xff8820',
-		  backgroundColor: '0x222222',
-		}
-	)
-
-	const myRef = useRef()
-
   const jobTitleRef = useRef<HTMLParagraphElement>(null);
   const experienceRef = useRef<HTMLParagraphElement>(null);
   const blurbRef = useRef<HTMLParagraphElement>(null);
@@ -120,28 +103,6 @@ function Cover({ element }: SectionProps) {
     onIntersect: toggleVisibility,
   });
 
-	useEffect(() => {
-		if (!vantaEffects) {
-			setVantaEffects(DOTS(Object.assign({
-				el: element.current, showLines: false
-			}, vantaCSS)))
-		}
-		return () => {
-			if (vantaEffects) {
-				vantaEffects.destroy()
-			}
-		}
-	}, [])
-
-	useEffect(() => {
-			if (vantaEffects) {
-				vantaEffects.destroy()
-			}
-		setVantaEffects(DOTS(Object.assign({
-				el: element.current, showLines: false
-			}, vantaCSS)))
-
-	}, [vantaCSS])
 
 
   const src = colorMode === "dark" ? darkWallpaper : lightWallpaper;

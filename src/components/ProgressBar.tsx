@@ -1,21 +1,15 @@
 import {
-    HStack,
-    Icon,
     Progress,
-    VStack,
-    Text,
     Popover,
-    Button,
     PopoverTrigger,
     PopoverBody,
     PopoverArrow,
     PopoverContent,
 } from '@chakra-ui/react'
-import { IconType } from 'react-icons/lib'
 
 interface Props {
     value: number
-    icon: IconType
+		icon: () => JSX.Element 
     name: string
 }
 

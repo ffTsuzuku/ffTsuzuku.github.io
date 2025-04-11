@@ -1,8 +1,7 @@
 import { Flex, Icon, BorderProps, useColorModeValue } from '@chakra-ui/react'
-import { IconType } from 'react-icons'
 
 interface CircleIconWrapperProps {
-    icon: IconType
+		icon: () => JSX.Element 
     darkBorder?: BorderProps['borderColor']
     lightBorder?: BorderProps['borderColor']
 }

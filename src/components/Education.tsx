@@ -4,10 +4,9 @@ import {
     Flex,
     HStack,
     Text,
-    useColorModeValue,
 } from '@chakra-ui/react'
 import { CircleIconWrapper } from './CircleIconWrapper'
-import { FaBook } from 'react-icons/fa'
+import Book from '../imgs/icons/Book'
 
 import Card from './Card'
 import data from '../data'
@@ -29,7 +28,7 @@ function Education({ element }: SectionProps) {
             <Link id='Education' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>
-                    <CircleIconWrapper icon={FaBook} />
+                    <CircleIconWrapper icon={Book} />
                     <Text
                         fontSize={{
                             base: '20px',

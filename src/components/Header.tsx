@@ -2,10 +2,7 @@ import {
   Box,
   Button,
   Flex,
-  Hide,
   HStack,
-  Icon,
-  IconButton,
   Link,
   Menu,
   MenuButton,
@@ -13,7 +10,6 @@ import {
   MenuList,
   Show,
   Switch,
-  Text,
   useColorMode,
   useColorModeValue,
   useDisclosure,
@@ -21,13 +17,10 @@ import {
 
 import {
   ChevronDownIcon,
-  HamburgerIcon,
   MoonIcon,
-  SunIcon,
 } from "@chakra-ui/icons";
 
-import { BsFillSunFill } from "react-icons/bs";
-
+import Sun from '../imgs/icons/Sun.tsx'
 import data from "../data";
 import { CSSObject } from "@emotion/react";
 
@@ -54,7 +47,7 @@ function Header(
 
   const ThemeIcon = colorMode === "dark"
     ? <MoonIcon boxSize={"25px"} />
-    : <BsFillSunFill size={25} />;
+    : <Sun size={25} />;
 
   const MenuItemTextHoverStlyes: CSSObject = {
     backgroundColor: menuItemBgColor,

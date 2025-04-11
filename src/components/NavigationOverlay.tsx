@@ -6,12 +6,8 @@ import {
     useColorModeValue,
     Link,
 } from '@chakra-ui/react'
-import { CSSObject } from '@emotion/react'
-
-import { MdRadioButtonChecked } from 'react-icons/md'
 
 import { sections as links } from '../types/global'
-
 interface NavigationOverlay {
     currentlyViewing: AvailableSections | undefined
 }
@@ -40,13 +36,6 @@ export default function NavigationOverlay({
             >
                 <Link href={link.link} _hover={{}}>
                     <span>
-                        <Icon
-                            fill={fillColor}
-                            cursor={'pointer'}
-                            as={MdRadioButtonChecked}
-                            width={'30px'}
-                            height={'30px'}
-                        />
                     </span>
                 </Link>
             </Tooltip>
