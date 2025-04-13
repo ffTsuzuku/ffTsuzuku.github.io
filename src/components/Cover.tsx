@@ -11,8 +11,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import darkWallpaper from "../imgs/s1.webp";
-import lightWallpaper from "../imgs/poetry.webp";
 import Header from "./Header";
 import React, { useEffect, useRef } from "react";
 import useIntersection from "../hooks/useIntersection";
@@ -102,10 +100,22 @@ function Cover({ element }: SectionProps) {
     rootMargin: "0px",
     onIntersect: toggleVisibility,
   });
+	const dark_bg = useBreakpointValue({
+		base: 'url(/images/banner-dark-480x270.webp)',
+		sm: 'url(/images/banner-dark-800x450.webp)',
+		md: 'url(/images/banner-dark-1200x675.webp)',
+		lg: 'url(/images/banner-dark-1600x900.webp)',
+  });
+	const light_bg = useBreakpointValue({
+		base: 'url(/images/banner-light-480x270.webp)',
+		sm: 'url(/images/banner-light-800x450.webp)',
+		md: 'url(/images/banner-light-1200x675.webp)',
+		lg: 'url(/images/banner-light-1600x900.webp)',
+  });
 
 
 
-  const src = colorMode === "dark" ? darkWallpaper : lightWallpaper;
+  const src = colorMode === "dark" ? dark_bg : light_bg;
   const blurbBgColor = useColorModeValue(
     "blackAlpha.700",
     "rgba(85, 60, 154, 0.80)",

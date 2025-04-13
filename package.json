@@ -30,6 +30,7 @@
         "gh-pages": "^4.0.0",
         "typescript": "^5.8.2",
         "vite": "^2.9.9",
-        "vite-bundle-analyzer": "^0.18.1"
+        "vite-bundle-analyzer": "^0.18.1",
+        "vite-imagetools": "^7.0.5"
     }
 }
