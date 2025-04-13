@@ -7,8 +7,17 @@ const Map = () => {
   const img = useColorModeValue(lightmap, darkmap);
   const bg = useColorModeValue("#edf2f6", "#2c313d");
   return (
-    <Flex w="90%" bgColor={bg} borderRadius={"md"} ml={"auto"} mr={"auto"} p="20px">
+    <Flex
+      w="90%"
+      bgColor={bg}
+      borderRadius={"md"}
+      ml={"auto"}
+      mr={"auto"}
+      p="20px"
+      id={"mapParent"}
+    >
       <MapInteractionCSS
+				id={"roadmap"}
         minScale={0.5}
         maxScale={3}
         translationBounds={{

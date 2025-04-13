@@ -28,6 +28,7 @@ export type Problem = {
   solution?: string;
   tag?: ProblemTag[];
   difficulty?: "Easy" | "Medium" | "Hard";
+  completed_at?: string,
 };
 
 export type Roadmap = Record<
@@ -46,6 +47,7 @@ const roadmap: Roadmap = {
         "tag": ["Array", "Hashmap"],
         "solution":
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/HrKMnHl_C",
+		  "completed_at": '2020-03-23 22:07'
       },
       {
         "name": "Contains Duplicate",
@@ -54,6 +56,7 @@ const roadmap: Roadmap = {
         "tag": ["Array", "Hashmap", "Sorting"],
         "solution":
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/xtNrWswT",
+		  "completed_at": "2025-03-23 22:11"
       },
       {
         "name": "Sorting Array",
@@ -85,6 +88,7 @@ const roadmap: Roadmap = {
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/-_sszk6e",
         "difficulty": "Medium",
         "tag": ["Array", "Sorting", "Hashmap", "String"],
+		"completed_at": "2025-03-23 22:11"
       },
       {
         "name": "Top K Frequent Elements",
@@ -105,6 +109,7 @@ const roadmap: Roadmap = {
       {
         "name": "Product of Array Except Self",
         "url": "https://leetcode.com/problems/product-of-array-except-self/",
+		  "completed_at": "2025-03-29 01:00"
       },
       {
         "name": "Valid Sudoku",

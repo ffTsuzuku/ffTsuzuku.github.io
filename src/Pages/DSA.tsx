@@ -11,14 +11,19 @@ import {
   Th,
   Thead,
   Tr,
-	useBreakpointValue,
-	useColorModeValue,
+  useBreakpointValue,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import Header from "../components/Header";
-import roadmap from "../data/lc_roadmap";
+import roadmap, { Problem } from "../data/lc_roadmap";
 import Search from "../imgs/icons/Search.tsx";
 import React, { useState } from "react";
 import Map from "../components/MermaidRoadmap/Roadmap/Map";
+import ToggleSwitch from "../components/Switch";
+import Flame from "../imgs/icons/Flame";
+import BinaryTree from "../imgs/icons/BinaryTree";
+import Activity from "../imgs/icons/Activity";
+import LeetCodeHeatmap from "../components/MermaidRoadmap/LeetCodeMap";
 
 /**
  * @todo: show difficulty of problems
@@ -29,7 +34,7 @@ import Map from "../components/MermaidRoadmap/Roadmap/Map";
 function DSA() {
   const [search, setSearch] = useState("");
   const [selectedStep, setSelectedStep] = useState("");
-	const headerTextColor = useColorModeValue("#e55858", "white")
+  const headerTextColor = useColorModeValue("#e55858", "white");
   const open_url = (url?: string) => {
     if (!url) {
       return;
@@ -37,22 +42,34 @@ function DSA() {
     window.open(url, "_blank");
   };
 
-	const table_size = useBreakpointValue(['sm', 'md'])
+  const table_size = useBreakpointValue(["sm", "md"]);
 
   // filter questions by roadmap steps
   const steps = Object.keys(roadmap);
   const selectable_steps = steps.map((step) => {
     return (
-      <option value={step} onChange={() => setSelectedStep(step)} key={step}>
+      <option
+        value={step}
+        onChange={() => setSelectedStep(step)}
+        key={step}
+      >
         {roadmap[step].section}
       </option>
     );
   });
   const steps_menu = (
-		//@ts-ignore
-    <Select onChange={(e) => setSelectedStep(e.target.value)} placeholder="Step">
+    //@ts-ignore
+    <Select
+      onChange={(e) => setSelectedStep(e.target.value)}
+      placeholder="Step"
+    >
       {selectable_steps}
     </Select>
+  );
+
+	const all_problems: Array<Problem> = []
+  Object.keys(roadmap).forEach(
+    (curr: string) => all_problems.push(...roadmap[curr].problems)
   );
 
   const question_rows_jsx = steps.map((step) => {
@@ -69,9 +86,10 @@ function DSA() {
 
     const problems_jsx = problems.map((problem) => {
       return (
-				//@ts-ignore
+        //@ts-ignore
         <Tr key={problem.name}>
-          <Td>{problem.name}</Td><Td>
+          <Td>{problem.name}</Td>
+          <Td>
             <Button onClick={() => open_url(problem.url)}>Leetcode</Button>
           </Td>
           <Td>
@@ -89,13 +107,36 @@ function DSA() {
     return problems_jsx;
   });
 
+  const switchBgColor = useColorModeValue("#D1D5DB", "#424242");
+  const GraphIcon = <BinaryTree />;
+  const ActivityIcon = <Activity />;
+	const [displayRoadMap, setDisplayRoadMap] = useState(true)
+
+	const LCHeatMap = <Flex marginX={'auto'} justifyContent={'center'} p={3}>
+		<LeetCodeHeatmap problems={all_problems} />
+	</Flex> 
+
+  const MapJsx = displayRoadMap ?  <Map /> : LCHeatMap;
   return (
     <>
       <Header
         sectionTextColor={headerTextColor}
         menuItemBgColorTheme={["lightgray", ""]}
       />
-			<Map />
+      {MapJsx}
+      <ToggleSwitch
+				onChange={() => setDisplayRoadMap(prev => !prev)}
+        onIcon={ActivityIcon}
+        offIcon={GraphIcon}
+        style="square"
+        onBgColor={switchBgColor}
+        offBgColor={switchBgColor}
+        cssProps={{
+          marginRight: "auto",
+          marginLeft: "auto",
+          marginTop: "10px",
+        }}
+      />
       <Flex p={3} gap={3}>
         <InputGroup>
           <InputLeftElement>
@@ -125,5 +166,4 @@ function DSA() {
   );
 }
 
-export default DSA
-
+export default DSA;
