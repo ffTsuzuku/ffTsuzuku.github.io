@@ -30,7 +30,7 @@ function Card({
             overflow='hidden'
             shadow={'2xl'}
         >
-            <Image src={image} alt={fallback} fit='cover' />
+            <Image src={image} alt={fallback} fit='cover' loading='lazy'/>
 
             <Box p='6'>
                 <Box

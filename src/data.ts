@@ -1,17 +1,17 @@
 import Javscript from "./imgs/icons/Javascript";
 import Laravel from "./imgs/icons/Laravel";
 
-import pomodoroScreenshot1 from "./imgs/projects/mbpomodoro/s1.png";
-import pomodoroScreenshot2 from "./imgs/projects/mbpomodoro/s2.png";
-import pomodoroScreenshot3 from "./imgs/projects/mbpomodoro/s3.png";
+import pomodoroScreenshot1 from "./imgs/projects/mbpomodoro/s1.webp";
+import pomodoroScreenshot2 from "./imgs/projects/mbpomodoro/s2.webp";
+import pomodoroScreenshot3 from "./imgs/projects/mbpomodoro/s3.webp";
 
 import mbblocker1 from "./imgs/projects/mbblocker/1.png";
 
-import tictactoe1 from "./imgs/projects/tic_tac_toe/site.png";
-import tictactoe2 from "./imgs/projects/tic_tac_toe/board.png";
-import tictactoe3 from "./imgs/projects/tic_tac_toe/game_over.png";
+//import tictactoe1 from "./imgs/projects/tic_tac_toe/site.png";
+//import tictactoe2 from "./imgs/projects/tic_tac_toe/board.png";
+//import tictactoe3 from "./imgs/projects/tic_tac_toe/game_over.png";
 
-import githubsearch1 from "./imgs/projects/github_search/screenshot.png";
+import githubsearch1 from "./imgs/projects/github_search/screenshot.webp";
 
 import { CarouselImage } from "./components/ImageCarousel";
 import LinkedIn from "./imgs/icons/LinkedIn";
@@ -188,7 +188,7 @@ const data: User = {
         "This repository provides a beautiful interface for searching for repositories belonging to a user or organization. Use the filters and sorting tools to quickly find and organize repositories.",
       github: "https://github.com/ffTsuzuku/github_search?tab=readme-ov-file",
     },
-    {
+    /**{
       name: "Tic Tac Toe",
       screenshots: [
         { image: tictactoe1 },
@@ -198,7 +198,7 @@ const data: User = {
       description:
         "This project serves as a demonstration of various state management techniques and optimization strategies commonly used in React applications. Whether you're new to React or looking to enhance your understanding of state management, this repository aims to provide clear examples and explanations for educational purposes.",
       github: "https://github.com/ffTsuzuku/tic-tac-toe",
-    },
+    },**/
     {
       name: "MBBlocker",
       screenshots: [{ image: mbblocker1 }],

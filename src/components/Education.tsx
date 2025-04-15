@@ -7,6 +7,7 @@ import {
 } from '@chakra-ui/react'
 import { CircleIconWrapper } from './CircleIconWrapper'
 import Book from '../imgs/icons/Book'
+import njit from "../imgs/njit.webp"
 
 import Card from './Card'
 import data from '../data'
@@ -15,7 +16,7 @@ function Education({ element }: SectionProps) {
         return (
             <Card
                 key={index}
-                image='https://news.njit.edu/sites/news/files/styles/16by9-banner/public/eberhardt_HDR.jpg?itok=1OTeWInX'
+                image={njit}
                 title={school.institution}
                 subTitle={`${school.level} ${school.major}`}
                 badge={school.period}

@@ -154,8 +154,6 @@ function Cover({ element }: SectionProps) {
             lg: "76px",
           }}
           ref={jobTitleRef}
-          opacity={0}
-          transition={"opacity 2s"}
         >
           Gagandeep Sandhu
         </Text>
