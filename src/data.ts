@@ -23,6 +23,14 @@ import Python from "./imgs/icons/Python";
 import React from "./imgs/icons/React";
 import TypeScript from "./imgs/icons/Typescript";
 import ChakraUI from "./imgs/icons/ChakraUI";
+import HTML5 from "./imgs/icons/HTML5";
+import CSS3 from "./imgs/icons/CSS3";
+import Tailwind from "./imgs/icons/Tailwind";
+import Redux from "./imgs/icons/Redux";
+import Vite from "./imgs/icons/Vite";
+import Webpack from "./imgs/icons/Webpack";
+import GIT from "./imgs/icons/Git";
+import { ColorMode } from "@chakra-ui/react";
 
 interface Work {
   companyName: string;
@@ -31,11 +39,15 @@ interface Work {
   responsibilities: string[];
 }
 
-interface Skill {
+export type SkillType = "Frontend" | "Backend" | "Languages" | "Tools";
+
+export interface Skill {
   name: string;
   proficiency: number;
-  icon: ({size, style, fill}) => JSX.Element;
+  icon: ({ size, style, fill }) => JSX.Element;
   iconFill?: string;
+  iconBoxColor?: Record<ColorMode, string>;
+  stroke?: string;
 }
 
 interface School {
@@ -55,7 +67,7 @@ interface Project {
 interface User {
   name: string;
   workExperience: Work[];
-  techStack: Skill[];
+  techStack: Record<SkillType, Skill[]>;
   education: School[];
   projects: Project[];
 }
@@ -124,62 +136,177 @@ const data: User = {
       ],
     },
   ],
-  techStack: [
-    {
-      name: "Javascript",
-      proficiency: 100,
-      icon: Javscript,
-      iconFill: "#fcdc00",
-    },
-    {
-      name: "TypeScript",
-      proficiency: 100,
-      icon: TypeScript,
-      iconFill: "#3178c6",
-    },
-    {
-      name: "React",
-      proficiency: 100,
-      icon: React,
-      iconFill: "#61dafb",
-    },
-    {
-      name: "Node",
-      proficiency: 100,
-      icon: NodeJs,
-      iconFill: "#689f63",
-    },
-    {
-      name: "Chakra UI",
-      proficiency: 100,
-      icon: ChakraUI,
-      iconFill: "gold",
-    },
-    {
-      name: "PHP",
-      proficiency: 100,
-      icon: PHP,
-      iconFill: "#8892bf",
-    },
-    {
-      name: "Laravel",
-      proficiency: 100,
-      icon: Laravel,
-      iconFill: "#ff2d20",
-    },
-    {
-      name: "Python",
-      proficiency: 50,
-      icon: Python,
-      iconFill: "#254f73",
-    },
-    {
-      name: "Java",
-      proficiency: 60,
-      icon: Java,
-      iconFill: "#ec2025",
-    },
-  ],
+  techStack: {
+    Backend: [
+      {
+        name: "Node",
+        proficiency: 100,
+        icon: NodeJs,
+        iconFill: "#689f63",
+        iconBoxColor: {
+          light: "#d3e4d6",
+          dark: "#223627",
+        },
+      },
+      {
+        name: "Laravel",
+        proficiency: 100,
+        icon: Laravel,
+        iconFill: "#ff2d20",
+        iconBoxColor: {
+          light: "#e4d7cf",
+          dark: "#e4d7cf",
+        },
+      },
+    ],
+    Frontend: [
+      {
+        name: "React",
+        proficiency: 100,
+        icon: React,
+        iconFill: "#61dafb",
+        iconBoxColor: {
+          light: "#d6ecee",
+          dark: "#1a2c37",
+        },
+      },
+      {
+        name: "Chakra UI",
+        proficiency: 100,
+        icon: ChakraUI,
+        iconFill: "gold",
+        iconBoxColor: {
+          light: "#fcfbd0",
+          dark: "#363d25",
+        },
+      },
+      {
+        name: "Redux",
+        proficiency: 100,
+        icon: Redux,
+        iconFill: "transparent",
+        stroke: "#764abc",
+        iconBoxColor: {
+          light: "#d4ceee",
+          dark: "#262b3f",
+        },
+      },
+      {
+        name: "Tailwind",
+        proficiency: 100,
+        icon: Tailwind,
+        iconFill: "#00bcff",
+        iconBoxColor: {
+          light: "#cee4e2",
+          dark: "#1a2c37",
+        },
+      },
+      {
+        name: "HTML",
+        proficiency: 100,
+        icon: HTML5,
+        iconFill: "#e44d27",
+        iconBoxColor: {
+          light: "#e4d7cf",
+          dark: "#e4d7cf",
+        },
+      },
+      {
+        name: "CSS3",
+        proficiency: 100,
+        icon: CSS3,
+        iconFill: "#214ce5",
+        iconBoxColor: {
+          light: "#c9d5eb",
+          dark: "#18273c",
+        },
+      },
+    ],
+    Tools: [
+      {
+        name: "Vite",
+        proficiency: 100,
+        icon: Vite,
+        iconFill: "#fcfbd0",
+        iconBoxColor: {
+          light: "#d4e0ee",
+          dark: "#363d25",
+        },
+      },
+      {
+        name: "Webpack",
+        proficiency: 100,
+        icon: Webpack,
+        iconFill: "#569ac8",
+        iconBoxColor: {
+          light: "#c9dde5",
+          dark: "#1a2c37",
+        },
+      },
+      {
+        name: "GIT",
+        proficiency: 100,
+        icon: GIT,
+        iconFill: "#f05133",
+        iconBoxColor: {
+          light: "#e4d7cf",
+          dark: "#e4d7cf",
+        },
+      },
+    ],
+    Languages: [
+      {
+        name: "Javascript",
+        proficiency: 100,
+        icon: Javscript,
+        iconFill: "#fcdc00",
+        iconBoxColor: {
+          light: "#fcfbd0",
+          dark: "#363d25",
+        },
+      },
+      {
+        name: "TypeScript",
+        proficiency: 100,
+        icon: TypeScript,
+        iconFill: "#3178c6",
+        iconBoxColor: {
+          light: "#c8dde6",
+          dark: "#1a2c37",
+        },
+      },
+      {
+        name: "PHP",
+        proficiency: 100,
+        icon: PHP,
+        iconFill: "#8892bf",
+        iconBoxColor: {
+          dark: "#262b3f",
+          light: "#d8d8ed",
+        },
+      },
+      {
+        name: "Python",
+        proficiency: 50,
+        icon: Python,
+        iconFill: "#254f73",
+        iconBoxColor: {
+          light: "#c9d5eb",
+          dark: "#1a2c37",
+        },
+      },
+      {
+        name: "Java",
+        proficiency: 60,
+        icon: Java,
+        iconFill: "#ec2025",
+        iconBoxColor: {
+          light: "#e4d7cf",
+          dark: "#e4d7cf",
+        },
+      },
+    ],
+  },
   projects: [
     {
       name: "Github Search",
