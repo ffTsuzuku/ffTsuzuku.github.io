@@ -32,11 +32,13 @@ import Webpack from "./imgs/icons/Webpack";
 import GIT from "./imgs/icons/Git";
 import { ColorMode } from "@chakra-ui/react";
 
-interface Work {
+export interface Work {
   companyName: string;
   title: string;
   period: string;
   responsibilities: string[];
+  blurb: string;
+  tech: string[];
 }
 
 export type SkillType = "Frontend" | "Backend" | "Languages" | "Tools";
@@ -103,6 +105,21 @@ const data: User = {
         "Wrote a BIM Model Viewer that allows customers to traverse through 3D renderings of their facilities.",
         "Maintain and oversee 8 front-end repositories and 2 back-end repositories within the company's codebase, ensuring code quality and consistency.",
       ],
+      "blurb":
+        "Lead developer across front-end and back-end systems, driving tech stack decisions and mentoring a team of 6. Built enterprise-grade applications, including an AI-powered photo gallery used by Amazon and major construction projects, and a Google Photos-style media manager with third-party integrations. Revamped legacy CRM to improve performance by over 99%, adding advanced security and reducing load times from 3 minutes to 200ms. Developed a 3D BIM viewer for client facilities and maintain 10+ production repositories with a focus on code quality and architecture.",
+      "tech": [
+        "React",
+        "Javascript",
+        "TypeScript",
+        "Redux",
+        "CSS3",
+        "HTML",
+        "PHP",
+        "Laravel",
+        "Python",
+        "Node.js",
+        "MySQL",
+      ],
     },
     {
       companyName: "Medical Lab Management",
@@ -112,6 +129,19 @@ const data: User = {
         "Contracted to assist the company in meeting their MVP release deadline.",
         "Developed an analytics dashboard utilizing Highcharts, enabling clients to visually interpret data effectively.",
         "Wrote and refactored MySQL queries to generate data for the dashboards, ensuring accuracy and efficiency.",
+      ],
+      "blurb":
+        "Brought on to help meet an MVP release deadline. Built a data analytics dashboard with Highcharts for intuitive client insights and refactored MySQL queries to ensure fast, accurate data generation.",
+      "tech": [
+        "Vue",
+        "Javascript",
+        "TypeScript",
+        "CSS3",
+        "HTML",
+        "PHP",
+        "Laravel",
+        "Node.js",
+        "MySQL",
       ],
     },
     {
@@ -124,6 +154,21 @@ const data: User = {
         "In charge of making the design choices for what tech stack and tools our enterprise software should be developed in. ",
         "Maintained open communication channels between upper management and the development team to ensure alignment with project goals and priorities",
       ],
+      blurb:
+        "Built and maintained core front-end and back-end features for a hospital sterilization tracking system, including designing RESTful APIs to support critical workflows. Led a team of 3 developers, made key tech stack decisions, and served as the bridge between engineering and upper management to keep projects aligned with business goals.",
+      tech: [
+        "React",
+        "Javascript",
+        "TypeScript",
+        "Redux",
+        "CSS3",
+        "HTML",
+        "PHP",
+        "Laravel",
+        "Python",
+        "Node.js",
+        "MySQL",
+      ],
     },
     {
       companyName: "Case Medical",
@@ -133,6 +178,22 @@ const data: User = {
         "Developed an internal Messaging Application to be used by the companies Sales Reps.",
         "Worked as both a Project Manager and Software developer, and helped mediate between management stakeholders, and the software team.",
         "Implemented and maintained Agile and Scrum methodologies within the development team, ensuring efficient, project management and adherence to timelines.",
+      ],
+      "blurb":
+        "Developed an internal messaging app for the sales team, while also acting as a Project Manager to bridge communication between stakeholders, management, and developers. Implemented Agile and Scrum methodologies to ensure efficient project delivery and timeline adherence.",
+      tech: [
+        "React",
+        "Javascript",
+        "TypeScript",
+        "Redux",
+        "CSS3",
+        "HTML",
+        "PHP",
+        "Laravel",
+        "Python",
+        "Node.js",
+        "MySQL",
+        "RabbitMQ",
       ],
     },
   ],
