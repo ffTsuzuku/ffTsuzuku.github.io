@@ -19,6 +19,7 @@ import roadmap from "../data/lc_roadmap";
 import Search from "../imgs/icons/Search.tsx";
 import React, { useState } from "react";
 import Map from "../components/MermaidRoadmap/Roadmap/Map";
+import ActivityGraph from "../components/ActivityGraph";
 
 /**
  * @todo: show difficulty of problems
@@ -96,6 +97,7 @@ function DSA() {
         menuItemBgColorTheme={["lightgray", ""]}
       />
 			<Map />
+			<ActivityGraph />
       <Flex p={3} gap={3}>
         <InputGroup>
           <InputLeftElement>

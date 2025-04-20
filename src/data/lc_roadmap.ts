@@ -20,12 +20,14 @@ export type ProblemTag =
   | "Heap"
   | "Greedy"
   | "Priority Queue"
-  | "Linked List";
+  | "Linked List"
+  | "Prefix Sum";
 
 export type Problem = {
   name: string;
   url: string;
   solution?: string;
+  completed_at?: string;
   tag?: ProblemTag[];
   difficulty?: "Easy" | "Medium" | "Hard";
 };
@@ -46,6 +48,7 @@ const roadmap: Roadmap = {
         "tag": ["Array", "Hashmap"],
         "solution":
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/HrKMnHl_C",
+        "completed_at": "2025-03-23",
       },
       {
         "name": "Contains Duplicate",
@@ -54,6 +57,7 @@ const roadmap: Roadmap = {
         "tag": ["Array", "Hashmap", "Sorting"],
         "solution":
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/xtNrWswT",
+        "completed_at": "2025-03-23",
       },
       {
         "name": "Sorting Array",
@@ -69,6 +73,7 @@ const roadmap: Roadmap = {
           "Radix Sort",
           "Counting Sort",
         ],
+        "completed_at": "2025-03-23",
       },
       {
         "name": "Valid Anagram",
@@ -77,6 +82,7 @@ const roadmap: Roadmap = {
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/uSMu7WPi",
         "difficulty": "Easy",
         "tag": ["Hashmap", "Sorting", "Array", "String"],
+        "completed_at": "2025-03-23",
       },
       {
         "name": "Group Anagrams",
@@ -91,6 +97,7 @@ const roadmap: Roadmap = {
         "url": "https://leetcode.com/problems/top-k-frequent-elements/",
         "solution":
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/ECngN3Yg",
+		  "completed_at": '2025-03-24',
         "difficulty": "Medium",
         "tag": [
           "Array",
@@ -105,6 +112,10 @@ const roadmap: Roadmap = {
       {
         "name": "Product of Array Except Self",
         "url": "https://leetcode.com/problems/product-of-array-except-self/",
+        "completed_at": "2025-03-29",
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/5g-Kk_Ntv",
+        "tag": ["Array", "Prefix Sum"],
       },
       {
         "name": "Valid Sudoku",
