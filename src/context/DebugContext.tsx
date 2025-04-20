@@ -13,9 +13,6 @@ const DebugContextProvider = ({children}) => {
 	const [info, set_info] = useState({log: 'Hello World'})
 	const [show_debug, set_show_debug] = useState(false)
 
-	useEffect(() => {
-		console.log({show_debug})
-	}, [show_debug])
 	const add_info = (key: string, value: string) => {
 		set_info(curr_state => {
 			const copy = {...curr_state}
