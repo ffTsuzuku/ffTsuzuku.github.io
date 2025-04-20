@@ -1,5 +1,4 @@
 const NodeJs = ({size, fill, style}) => {
-	console.log({size, fill})
   return (
     <svg
       stroke="currentColor"
