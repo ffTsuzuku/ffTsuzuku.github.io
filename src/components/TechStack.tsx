@@ -8,31 +8,33 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-
 import data, { SkillType } from "../data";
 import { Skill as SkillI } from "../data";
 
-
 const Skill = ({ skill }: { skill: SkillI }) => {
-	const {colorMode} = useColorMode()
-	const bg_color = useColorModeValue('#8ca19c', '#14211e')
+  const { colorMode } = useColorMode();
+  const bg_color = useColorModeValue("#8ca19c", "#14211e");
   const Icon = skill.icon;
   return (
     <Flex
-			m={'0px'}
+      m={"0px"}
       p={3}
       gap={3}
       bgColor={bg_color}
-			color={'white'}
-			fontWeight={'bold'}
+      color={"white"}
+      fontWeight={"bold"}
       width={"300px"}
       borderRadius={".375rem"}
       alignItems={"center"}
     >
-      <Flex p={3} bgColor={skill.iconBoxColor?.[colorMode]} borderRadius={".375rem"}>
+      <Flex
+        p={3}
+        bgColor={skill.iconBoxColor?.[colorMode]}
+        borderRadius={".375rem"}
+      >
         <Icon
           fill={skill.iconFill}
-					stroke={skill.stroke}
+          stroke={skill.stroke}
           size={"30px"}
           width={"30px"}
           height={"30px"}
@@ -49,13 +51,15 @@ const SkillSet = ({ element }) => {
 
   const SectionJSX = sections.map((section_name) => {
     const skills = data.techStack[section_name as SkillType];
-    const SkillsJSX = skills.map((skill) => <Skill skill={skill} />);
+    const SkillsJSX = skills.map((skill) => (
+      <Skill skill={skill} key={skill.name} />
+    ));
     return (
-      <VStack alignItems={"flex-start"}>
+      <VStack alignItems={"flex-start"} key={section_name}>
         <Text>{section_name}</Text>
-				<Flex flexWrap={'wrap'} justifyContent={'flex-start'} gap={5}>
-					{SkillsJSX}
-				</Flex>
+        <Flex flexWrap={"wrap"} justifyContent={"flex-start"} gap={5}>
+          {SkillsJSX}
+        </Flex>
       </VStack>
     );
   });
