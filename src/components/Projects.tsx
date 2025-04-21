@@ -1,4 +1,4 @@
-import { Divider, Flex, Link, Text, useColorModeValue } from "@chakra-ui/react";
+import { Divider, Flex, Link, Text } from "@chakra-ui/react";
 import Data from "../data";
 import { CSSProperties } from "react";
 import Card from "./Card";
@@ -7,7 +7,6 @@ const open_link = (link) => {
 	window.open(link, '__blank')
 }
 const Projects = () => {
-  const bgColor = useColorModeValue("#DEE4E7", "#282834");
   const { projects } = Data;
   const projects_jsx = projects.map((project) => {
 		const link = {text: 'Github', onClick: () => open_link(project.github)}
@@ -23,7 +22,7 @@ const Projects = () => {
     );
   });
   return (
-    <Flex gap={5} flexDir="column" p={"50px"} bgColor={bgColor}>
+    <Flex gap={5} flexDir="column" p={"50px"}>
       <Text textAlign={"left"} fontSize={"40px"}>Projects</Text>
       <Divider />
       <Link id="Projects" />

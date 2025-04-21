@@ -4,6 +4,7 @@ import {
     Flex,
     HStack,
     Text,
+		useColorModeValue,
 } from '@chakra-ui/react'
 import { CircleIconWrapper } from './CircleIconWrapper'
 import Book from '../imgs/icons/Book'
@@ -12,6 +13,7 @@ import njit from "../imgs/njit.webp"
 import Card from './Card'
 import data from '../data'
 function Education({ element }: SectionProps) {
+  const bgColor = useColorModeValue("#DEE4E7", "#282834");
     const EducationCards = data.education.map((school, index) => {
         return (
             <Card
@@ -25,7 +27,7 @@ function Education({ element }: SectionProps) {
     })
 
     return (
-        <VStack paddingY={'50px'} spacing={50} ref={element}>
+        <VStack paddingY={'50px'} spacing={50} ref={element} bgColor={bgColor}>
             <Link id='Education' />
             <Flex maxWidth={'100vw'} justifyContent={'center'}>
                 <HStack justifyContent={'center'}>
