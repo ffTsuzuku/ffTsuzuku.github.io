@@ -2,8 +2,8 @@ import Javscript from "./imgs/icons/Javascript";
 import Laravel from "./imgs/icons/Laravel";
 
 import pomodoroScreenshot1 from "./imgs/projects/mbpomodoro/s1.webp";
-import pomodoroScreenshot2 from "./imgs/projects/mbpomodoro/s2.webp";
-import pomodoroScreenshot3 from "./imgs/projects/mbpomodoro/s3.webp";
+//import pomodoroScreenshot2 from "./imgs/projects/mbpomodoro/s2.webp";
+//import pomodoroScreenshot3 from "./imgs/projects/mbpomodoro/s3.webp";
 
 import mbblocker1 from "./imgs/projects/mbblocker/1.png";
 
@@ -13,7 +13,6 @@ import mbblocker1 from "./imgs/projects/mbblocker/1.png";
 
 import githubsearch1 from "./imgs/projects/github_search/screenshot.webp";
 
-import { CarouselImage } from "./components/ImageCarousel";
 import LinkedIn from "./imgs/icons/LinkedIn";
 import Github from "./imgs/icons/Github";
 import Java from "./imgs/icons/Java";
@@ -61,7 +60,7 @@ interface School {
 
 interface Project {
   name: string;
-  screenshots: CarouselImage[];
+	screenshots: {image: string}[];
   description: string;
   github: string;
 }
@@ -372,8 +371,8 @@ const data: User = {
     {
       name: "Github Search",
       screenshots: [{ image: githubsearch1 }],
-      description:
-        "This repository provides a beautiful interface for searching for repositories belonging to a user or organization. Use the filters and sorting tools to quickly find and organize repositories.",
+      //description: "This repository provides a beautiful interface for searching for repositories belonging to a user or organization. Use the filters and sorting tools to quickly find and organize repositories.",
+      description: "A search interface for finding repositories tied to a user or org",
       github: "https://github.com/ffTsuzuku/github_search?tab=readme-ov-file",
     },
     /**{
@@ -390,19 +389,17 @@ const data: User = {
     {
       name: "MBBlocker",
       screenshots: [{ image: mbblocker1 }],
-      description:
-        "An easy to use and beautiful Chrome Extension for blocking websites. Created to boost my productivity and learn chrome extension development.",
+      //description: "An easy to use and beautiful Chrome Extension for blocking websites. Created to boost my productivity and learn chrome extension development.",
+      description: "An easy to use and beautiful Chrome Extension for blocking websites.",
       github: "https://github.com/ffTsuzuku/MBBlocker",
     },
     {
       name: "MBPomodoro",
       screenshots: [
         { image: pomodoroScreenshot1 },
-        { image: pomodoroScreenshot2 },
-        { image: pomodoroScreenshot3 },
       ],
-      description:
-        "As a software developer, I created a Pomodoro app that provides a more calming and peaceful experience than traditional Pomodoro apps. To achieve this, I incorporated soothing meditation gong sounds as an alternative to the typical disruptive alarm noises. In addition to the calming sounds, the app allows users to customize time presets and easily switch between them. Users can also control the volume of the different sound effects in the app and save their settings locally, eliminating the need for creating an account. To enhance usability, I added gesture controls through Bluetooth headphone integration. This allows users to start and pause the timer with simple gestures, eliminating the need to touch the phone or computer. Through the creation of this app, I have honed my skills in user interface design, audio integration, and mobile application development.",
+      //description: "As a software developer, I created a Pomodoro app that provides a more calming and peaceful experience than traditional Pomodoro apps. To achieve this, I incorporated soothing meditation gong sounds as an alternative to the typical disruptive alarm noises. In addition to the calming sounds, the app allows users to customize time presets and easily switch between them. Users can also control the volume of the different sound effects in the app and save their settings locally, eliminating the need for creating an account. To enhance usability, I added gesture controls through Bluetooth headphone integration. This allows users to start and pause the timer with simple gestures, eliminating the need to touch the phone or computer. Through the creation of this app, I have honed my skills in user interface design, audio integration, and mobile application development.",
+      description: "Pomodoro app that provides a calming and peaceful experience than other apps.",
       github: "https://github.com/ffTsuzuku/MBPomodoro",
     },
   ],
