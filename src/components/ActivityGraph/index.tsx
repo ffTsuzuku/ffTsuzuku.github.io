@@ -32,7 +32,7 @@ const ActivityGraph = () => {
   const { colorMode } = useColorMode();
   const border_color = useColorModeValue("#d1d9e0", "#3d444d");
   const max_container_width = useBreakpointValue({ base: "95%" });
-  const cell_size = useBreakpointValue({ base: "10px", lg: "18px" });
+  const cell_size = useBreakpointValue({ base: "10px", lg: "18px", xl: "1.5em" });
 
   const container_styles = {
     ...table_container_styles,
