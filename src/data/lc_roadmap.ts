@@ -97,7 +97,7 @@ const roadmap: Roadmap = {
         "url": "https://leetcode.com/problems/top-k-frequent-elements/",
         "solution":
           "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/ECngN3Yg",
-		  "completed_at": '2025-03-24',
+        "completed_at": "2025-03-24",
         "difficulty": "Medium",
         "tag": [
           "Array",
@@ -120,6 +120,11 @@ const roadmap: Roadmap = {
       {
         "name": "Valid Sudoku",
         "url": "https://leetcode.com/problems/valid-sudoku/",
+        "difficulty": "Medium",
+        "completed_at": "2025-04-23",
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/UJM4HKKx",
+        "tag": ["Array", "Hashmap", "Matrix"],
       },
       {
         "name": "Encode and Decode Strings",
