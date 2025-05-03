@@ -129,6 +129,11 @@ const roadmap: Roadmap = {
       {
         "name": "Encode and Decode Strings",
         "url": "https://leetcode.com/problems/encode-and-decode-strings/",
+        "solution":
+          "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/iCKl6BNA",
+        "difficulty": "Medium",
+        "tag": ["Array", "String", "Design"],
+        "completed_at": "2025-05-01",
       },
       {
         "name": "Longest Consecutive Sequence",
