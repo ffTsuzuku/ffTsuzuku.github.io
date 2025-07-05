@@ -21,7 +21,10 @@ export type ProblemTag =
   | "Greedy"
   | "Priority Queue"
   | "Linked List"
-  | "Prefix Sum";
+  | "Prefix Sum"
+  | "Union Find"
+  | "Two Pointers"
+  | "Math"
 
 export type Problem = {
   name: string;
@@ -138,26 +141,50 @@ const roadmap: Roadmap = {
       {
         "name": "Longest Consecutive Sequence",
         "url": "https://leetcode.com/problems/longest-consecutive-sequence/",
+		"solution": 'https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/XXVo4CSq',
+		"difficulty": "Medium",
+		"tag": ["Array", "Hashmap", "Union Find"],
+		"completed_at": '2025-05-04',
       },
       {
         "name": "Intersection of Two Arrays",
         "url": "https://leetcode.com/problems/intersection-of-two-arrays/",
+		"solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/luzIzXi-",
+		"completed_at": "2025-07-01",
+		"difficulty": "Easy",
+		"tag": ["Array", "Hashmap", "Two Pointers", "Binary Search", "Sorting"],
       },
       {
         "name": "Intersection of Two Arrays II",
         "url": "https://leetcode.com/problems/intersection-of-two-arrays-ii/",
+		"solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/ZXNtf6pj",
+		"tag": ["Array", "Hashmap", "Two Pointers", "Binary Search", "Sorting"],
+		"difficulty": "Easy",
+		"completed_at": "2025-07-01",
       },
       {
         "name": "Missing Number",
         "url": "https://leetcode.com/problems/missing-number/",
+		"solution": 'https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/ve1XQ7Bd',
+		"difficulty": "Easy",
+		"tag": ["Array", "Hashmap", "Math"],
+		"completed_at": "2025-07-03",
       },
       {
         "name": "Find the Difference",
         "url": "https://leetcode.com/problems/find-the-difference/",
+		"solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/0GUHxhlQ",
+		"difficulty": "Easy",
+		"tag": ["Array", "Hashmap", "String", "Sorting"],
+		"completed_at": "2025-07-03",
       },
       {
         "name": "Happy Number",
         "url": "https://leetcode.com/problems/happy-number/",
+		"solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/38KdcxwP",
+		"difficulty": "Easy",
+		"tag": ["Two Pointers", "Hashmap", "Math"],
+		"completed_at": "2025-07-03",
       },
       { "name": "4Sum", "url": "https://leetcode.com/problems/4sum/" },
       {
