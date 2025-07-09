@@ -212,13 +212,27 @@ const roadmap: Roadmap = {
       },
       {
         "name": "Two Sum II - Input Array Is Sorted",
-        "url":
-          "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+        "url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/",
+		"solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/lefs7Hz6",
+		"difficulty": "Medium",
+		"completed_at": "2025-07-04",
+		"tag": ["Array", "Two Pointers", "Binary Search"],
       },
-      { "name": "3Sum", "url": "https://leetcode.com/problems/3sum/" },
+      { 
+		  "name": "3Sum", 
+		  "url": "https://leetcode.com/problems/3sum/",
+		  "solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/XpnBQDJq",
+		  "difficulty": "Medium",
+		  "tag": ["Array", "Two Pointers", "Sorting"],
+		  "completed_at": "2025-07-04",
+	  },
       {
         "name": "Container With Most Water",
         "url": "https://leetcode.com/problems/container-with-most-water/",
+		"solution": "https://community.inkdrop.app/afd481985696bcb19895f8b79c06970b/Rg5C-JW7Z",
+		"completed_at": "2025-07-09",	
+		"difficulty": "Medium",
+		"tag": ["Two Pointers", "Array", "Greedy"],
       },
       {
         "name": "Trapping Rain Water",
