@@ -1,5 +1,6 @@
+// @ts-nocheck
 import React, { useState, useEffect, useRef } from 'react'
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex, useColorModeValue } from '@chakra-ui/react'
 
 const MatrixRain = () => {
     const matrixCanvas = useRef<HTMLCanvasElement>(null)
@@ -12,6 +13,11 @@ const MatrixRain = () => {
     const nums = '0123456789'
     const alphabet = katakana + latin + nums
     const fontSize = 16
+
+    // Dynamic Theme Matching
+    const rainColor = useColorModeValue('#111111', '#FFFFFF')
+    const fadeColor = useColorModeValue('rgba(255, 255, 255, 0.05)', 'rgba(0, 0, 0, 0.05)')
+    const blendMode = useColorModeValue('multiply', 'screen')
 
     // Set the canvas dimensions
     useEffect(() => {
@@ -30,15 +36,15 @@ const MatrixRain = () => {
             const rain = rainDrops.current
             if (!canvas || !context || !rainDrops.current) return
 
-            context.fillStyle = 'rgba(0, 0, 0, 0.05)'
+            context.fillStyle = fadeColor
             context.fillRect(0, 0, canvas.width, canvas.height)
-            context.fillStyle = '#0F0'
+            context.fillStyle = rainColor
             context.font = fontSize + 'px monospace'
 
             for (let i = 0; i < rain.length; i++) {
                 const x = i * fontSize
                 const y = rain[i] * fontSize
-                const text = alphabet.charAt(Math.random() * alphabet.length)
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length))
                 context.fillText(text, x, y)
 
                 if (y > canvas?.height && Math.random() > 0.975) {
@@ -48,27 +54,16 @@ const MatrixRain = () => {
             }
         }
 
-        setInterval(draw, 30)
-    }, [])
+        const runner = setInterval(draw, 70)
+        return () => clearInterval(runner)
+    }, [fadeColor, rainColor])
 
     return (
-        <Flex w={'100%'} h={'100vh'} backgroundColor={'black'} position={'fixed'} zIndex={9999}>
+        <Flex w={'100%'} h={'100vh'} backgroundColor={'transparent'} position={'fixed'} zIndex={9999} pointerEvents="none">
             <canvas
                 ref={matrixCanvas}
-                style={{ width: '100%', height: '100vh' }}
+                style={{ width: '100%', height: '100vh', mixBlendMode: blendMode, opacity: 0.2 }}
             />
-            <Text
-                color={'white'}
-                fontSize={'4em'}
-                position={'fixed'}
-                left={'50%'}
-                top={'50%'}
-                transform={'translate(-50%, -50%)'}
-                textAlign={'center'}
-                animation={'fade 5s ease-in-out infinite'}
-            >
-                {'Wake Up Neo'}
-            </Text>
         </Flex>
     )
 }

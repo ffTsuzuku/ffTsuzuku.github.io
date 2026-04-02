@@ -365,6 +365,16 @@ const data: User = {
           dark: "#e4d7cf",
         },
       },
+      {
+        name: "SQL",
+        proficiency: 90,
+        icon: Java,
+        iconFill: "#ec2025",
+        iconBoxColor: {
+          light: "#e4d7cf",
+          dark: "#e4d7cf",
+        },
+      },
     ],
   },
   projects: [
@@ -386,6 +396,7 @@ const data: User = {
         "This project serves as a demonstration of various state management techniques and optimization strategies commonly used in React applications. Whether you're new to React or looking to enhance your understanding of state management, this repository aims to provide clear examples and explanations for educational purposes.",
       github: "https://github.com/ffTsuzuku/tic-tac-toe",
     },**/
+		/*
     {
       name: "MBBlocker",
       screenshots: [{ image: mbblocker1 }],
@@ -393,6 +404,7 @@ const data: User = {
       description: "An easy to use and beautiful Chrome Extension for blocking websites.",
       github: "https://github.com/ffTsuzuku/MBBlocker",
     },
+		*/
     {
       name: "MBPomodoro",
       screenshots: [
