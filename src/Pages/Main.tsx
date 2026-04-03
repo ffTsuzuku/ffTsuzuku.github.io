@@ -77,6 +77,39 @@ function Main() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
+  const SectionThemeToggle = () => (
+    <Flex display={{ base: "flex", md: "flex" }} justify="flex-end" align="center">
+      <Box
+        border="1px solid"
+        borderColor={mutedColor}
+        borderRadius="full"
+        px={1}
+        py={1}
+        display="flex"
+        alignItems="center"
+      >
+        <Switch
+          size="md"
+          isChecked={colorMode === "dark"}
+          onChange={toggleColorMode}
+          colorScheme="whiteAlpha"
+        />
+      </Box>
+    </Flex>
+  );
+
+  const SectionHeader = ({ title }: { title: string }) => (
+    <MotionBox initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} mb={16} w="100%">
+      <Flex w="100%" justify="space-between" align="center" gap={6} mb={4}>
+        <Text fontSize="xl" letterSpacing="widest" fontWeight="400" textTransform="uppercase">
+          {title}
+        </Text>
+        <SectionThemeToggle />
+      </Flex>
+      <Divider borderColor={mutedColor} />
+    </MotionBox>
+  );
+
   const TypewriterHeader = ({ firstName, lastName, color }) => {
     const [displayedFirstName, setDisplayedFirstName] = useState("");
     const [displayedLastName, setDisplayedLastName] = useState("");
@@ -150,12 +183,7 @@ function Main() {
     <Box>
       {/* HERO SECTION */}
       <Flex direction="column" minH={{ base: "auto", md: "100vh" }} pt={{ base: 4, md: 8 }} pb={{ base: 24, md: 8 }} pr={{ base: 4, lg: 10 }}>
-        {/* Top Toggle (Desktop only) */}
-        <Flex display={{ base: "none", md: "flex" }} justify="flex-end" w="100%" pt={0} pr={0}>
-          <Box border="1px solid" borderColor={mutedColor} borderRadius="full" px={1} py={1} display="flex" alignItems="center">
-            <Switch size="md" isChecked={colorMode === "dark"} onChange={toggleColorMode} colorScheme="whiteAlpha" />
-          </Box>
-        </Flex>
+        <SectionThemeToggle />
 
         <Flex flex="1" align={{ base: "flex-start", md: "center" }} justify="space-between" pl={{ base: 8, md: 16 }} pr={{ base: 8, lg: 10 }} mt={{ base: 10, md: 0 }} direction={{ base: "column", lg: "row" }}>
           <TypewriterHeader key={displayFirst + displayLast} firstName={displayFirst} lastName={displayLast} color={color} />
@@ -259,10 +287,7 @@ function Main() {
 
   const CareerSection = () => (
     <Flex direction="column" minH="100vh" py={{ base: 8, md: 20 }} pl={{ base: 8, md: 16 }} pr={{ base: 8, lg: 32 }}>
-      <MotionBox initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} mb={16} w="100%">
-        <Text fontSize="xl" letterSpacing="widest" mb={4} fontWeight="400" textTransform="uppercase">Career</Text>
-        <Divider borderColor={mutedColor} />
-      </MotionBox>
+      <SectionHeader title="Career" />
       
       <VStack spacing={{ base: 16, md: 24 }} align="start" w="100%">
         {data.workExperience.map((job, index) => (
@@ -305,10 +330,7 @@ function Main() {
 
   const WorksSection = () => (
     <Flex direction="column" minH="100vh" py={{ base: 8, md: 20 }} pl={{ base: 8, md: 16 }} pr={{ base: 8, lg: 32 }}>
-      <MotionBox initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} mb={16} w="100%">
-        <Text fontSize="xl" letterSpacing="widest" mb={4} fontWeight="400" textTransform="uppercase">Works</Text>
-        <Divider borderColor={mutedColor} />
-      </MotionBox>
+      <SectionHeader title="Works" />
 
       <VStack spacing={{ base: 20, md: 32 }} align="start" w="100%">
         {data.projects.map((project, index) => (
@@ -349,10 +371,7 @@ function Main() {
 
   const EducationSection = () => (
     <Flex direction="column" minH="100vh" py={{ base: 8, md: 20 }} pl={{ base: 8, md: 16 }} pr={{ base: 8, lg: 32 }}>
-      <MotionBox initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariant} mb={16} w="100%">
-        <Text fontSize="xl" letterSpacing="widest" mb={4} fontWeight="400" textTransform="uppercase">Education</Text>
-        <Divider borderColor={mutedColor} />
-      </MotionBox>
+      <SectionHeader title="Education" />
 
       <SimpleGrid columns={{ base: 1, xl: 2 }} spacing={{ base: 10, md: 16 }} w="100%">
         {data.education.map((edu, index) => (
@@ -416,12 +435,6 @@ function Main() {
           </Flex>
         </Box>
 
-        {/* MOBILE THEME TOGGLE - Below the header, scrolling natively within content */}
-        <Flex display={{ base: "flex", md: "none" }} justify="flex-end" w="100%" pt={4} pr={6}>
-          <Box border="1px solid" borderColor={mutedColor} borderRadius="full" px={1} py={1} display="flex" alignItems="center">
-            <Switch size="sm" isChecked={colorMode === "dark"} onChange={toggleColorMode} colorScheme="whiteAlpha" />
-          </Box>
-        </Flex>
 
         {/* DESKTOP SIDEBAR */}
         <Box 

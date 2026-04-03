@@ -379,6 +379,12 @@ const data: User = {
   },
   projects: [
     {
+      name: "ToTui",
+      screenshots: [{ image: 'images/totui_trailer_720.gif' }],
+      description: "Keyboard-first ClickUp client for the terminal, built with Bubble Tea.",
+      github: "https://github.com/ffTsuzuku/ToTui",
+    },
+    {
       name: "Github Search",
       screenshots: [{ image: githubsearch1 }],
       //description: "This repository provides a beautiful interface for searching for repositories belonging to a user or organization. Use the filters and sorting tools to quickly find and organize repositories.",

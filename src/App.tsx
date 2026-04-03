@@ -1,5 +1,5 @@
 import "./App.css";
-import MatrixRain from "./components/MatrixScreenSaver";
+//import MatrixRain from "./components/MatrixScreenSaver";
 import { useEffect, useRef, useState } from "react";
 import Main from "./Pages/Main";
 import { HashRouter, Route, Routes } from "react-router-dom";
@@ -42,7 +42,7 @@ function App() {
     <DebugInfo key={2} />,
   ];
 
-  if (showRenderSS) {
+  if (showRenderSS && false) {
     Content.unshift(<MatrixRain key={0} />);
   }
 
