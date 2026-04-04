@@ -2,7 +2,7 @@
     "name": "resume",
     "private": true,
     "version": "0.0.0",
-    "homepage": "https://fftsuzuku.github.io",
+    "homepage": "https://gsandhu.dev",
     "scripts": {
         "dev": "vite --host",
         "build": "tsc --noCheck && vite build",
