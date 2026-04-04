@@ -69,8 +69,10 @@ function Main() {
     };
   }, [isIdle]);
 
-  const displayFirst = isIdle ? "WAKE UP" : firstName;
-  const displayLast = isIdle ? "NEO" : lastName;
+	//const displayFirst = isIdle ? "WAKE UP" : firstName;
+	//const displayLast = isIdle ? "NEO" : lastName;
+	const displayFirst = firstName;
+	const displayLast = lastName;
 
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 40 },

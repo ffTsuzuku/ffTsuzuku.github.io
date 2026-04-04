@@ -81,7 +81,7 @@ interface Social {
 
 const social_media: Social[] = [{
   name: "LinkedIn",
-  link: "https://www.linkedin.com/in/gagandeep-sandhu-062871191",
+	link: "https://www.linkedin.com/in/gagandeep-s-062871191",
   icon: LinkedIn,
 }, {
   name: "Github",
