@@ -40,12 +40,12 @@ export interface Work {
   tech: string[];
 }
 
-export type SkillType = "Frontend" | "Backend" | "Languages" | "Tools";
+export type SkillType = "Frontend" | "Backend" | "Languages" | "Tools" | "AI";
 
 export interface Skill {
   name: string;
-  proficiency: number;
-  icon: ({ size, style, fill }) => JSX.Element;
+  proficiency?: number;
+  icon?: ({ size, style, fill }) => JSX.Element;
   iconFill?: string;
   iconBoxColor?: Record<ColorMode, string>;
   stroke?: string;
@@ -282,6 +282,12 @@ const data: User = {
         },
       },
     ],
+		AI: [
+			{ name: "Gemini-CLI" },
+			{ name: "Antigravity" },
+			{ name: "SKILLS.md" },
+			{ name: "MCP Servers" },
+		],
     Tools: [
       {
         name: "Vite",

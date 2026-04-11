@@ -42,37 +42,7 @@ function Main() {
   const email = "gagandeepsandhu@protonmail.com"; 
   const iconWidth = "18px";
 
-  const techCategories = ["Frontend", "Backend", "Tools", "Languages"];
-
-  const [isIdle, setIsIdle] = useState(false);
-
-  useEffect(() => {
-    let lastAction = Date.now();
-    const handleAction = () => {
-      lastAction = Date.now();
-      if (isIdle) setIsIdle(false);
-    };
-    
-    window.addEventListener("mousemove", handleAction);
-    window.addEventListener("keydown", handleAction);
-    
-    const interval = setInterval(() => {
-      if (Date.now() - lastAction > 100000) {
-        setIsIdle(true);
-      }
-    }, 1000);
-    
-    return () => {
-      window.removeEventListener("mousemove", handleAction);
-      window.removeEventListener("keydown", handleAction);
-      clearInterval(interval);
-    };
-  }, [isIdle]);
-
-	//const displayFirst = isIdle ? "WAKE UP" : firstName;
-	//const displayLast = isIdle ? "NEO" : lastName;
-	const displayFirst = firstName;
-	const displayLast = lastName;
+  const techCategories = ["Frontend", "Backend", "AI", "Tools", "Languages"];
 
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 40 },
@@ -188,7 +158,7 @@ function Main() {
         <SectionThemeToggle />
 
         <Flex flex="1" align={{ base: "flex-start", md: "center" }} justify="space-between" pl={{ base: 8, md: 16 }} pr={{ base: 8, lg: 10 }} mt={{ base: 10, md: 0 }} direction={{ base: "column", lg: "row" }}>
-          <TypewriterHeader key={displayFirst + displayLast} firstName={displayFirst} lastName={displayLast} color={color} />
+          <TypewriterHeader firstName={firstName} lastName={lastName} color={color} />
 
           <Box maxW={{ base: "100%", lg: "450px" }} w="100%" mt={{ base: 6, xl: 0 }} alignSelf="center">
             {/* Mobile Email - Positioned exactly above About Me */}
